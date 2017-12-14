@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.blacklist.mapper.AddressDictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="place_type" jdbcType="VARCHAR" property="placeType" />
+    <result column="place_code" jdbcType="VARCHAR" property="placeCode" />
+    <result column="place_name" jdbcType="VARCHAR" property="placeName" />
+    <result column="up_place_code" jdbcType="VARCHAR" property="upPlaceCode" />
+  </resultMap>
+  
+  <resultMap id="placesMap" type="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+	<!-- 主属性 -->
+	<id column="id" jdbcType="BIGINT" property="id" />
+	<!-- 普通属性 -->
+	<result column="place_type" jdbcType="VARCHAR" property="placeType" />
+    <result column="place_code" jdbcType="VARCHAR" property="placeCode" />
+    <result column="place_name" jdbcType="VARCHAR" property="placeName" />
+    <result column="up_place_code" jdbcType="VARCHAR" property="upPlaceCode" />
+	<!-- 关系属性(多个) -->
+	<collection ofType="com.shenpu.proxy.blacklist.domain.AddressDictionary" 
+	 	property="children" column="place_code" javaType="java.util.ArrayList" select="selectChildren">
+	</collection>
+  </resultMap>
+  
+  
+  <sql id="Base_Column_List">
+    id, place_type, place_code, place_name, up_place_code
+  </sql>
+ 
+    
+  <select id="selectChildren" resultMap="placesMap" parameterType="String">
+    select * from syb_address_dictionary where up_place_code=#{place_code}
+  </select>
+  <select id="selectListByUpPlaceCode" parameterType="java.lang.String" resultMap="placesMap">
+  	select * from syb_address_dictionary where up_place_code=#{code}
+  </select>
+  <select id="selectListNoUpPlaceCode" resultMap="placesMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_address_dictionary
+    where up_place_code is null 
+  </select>
+  
+  
+  <select id="selectAll" resultMap="placesMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_address_dictionary
+  </select>
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_address_dictionary
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from syb_address_dictionary
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+    insert into syb_address_dictionary (id, place_type, place_code, 
+      place_name, up_place_code)
+    values (#{id,jdbcType=BIGINT}, #{placeType,jdbcType=VARCHAR}, #{placeCode,jdbcType=VARCHAR}, 
+      #{placeName,jdbcType=VARCHAR}, #{upPlaceCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+    insert into syb_address_dictionary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="placeType != null">
+        place_type,
+      </if>
+      <if test="placeCode != null">
+        place_code,
+      </if>
+      <if test="placeName != null">
+        place_name,
+      </if>
+      <if test="upPlaceCode != null">
+        up_place_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="placeType != null">
+        #{placeType,jdbcType=VARCHAR},
+      </if>
+      <if test="placeCode != null">
+        #{placeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="placeName != null">
+        #{placeName,jdbcType=VARCHAR},
+      </if>
+      <if test="upPlaceCode != null">
+        #{upPlaceCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+    update syb_address_dictionary
+    <set>
+      <if test="placeType != null">
+        place_type = #{placeType,jdbcType=VARCHAR},
+      </if>
+      <if test="placeCode != null">
+        place_code = #{placeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="placeName != null">
+        place_name = #{placeName,jdbcType=VARCHAR},
+      </if>
+      <if test="upPlaceCode != null">
+        up_place_code = #{upPlaceCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.blacklist.domain.AddressDictionary">
+    update syb_address_dictionary
+    set place_type = #{placeType,jdbcType=VARCHAR},
+      place_code = #{placeCode,jdbcType=VARCHAR},
+      place_name = #{placeName,jdbcType=VARCHAR},
+      up_place_code = #{upPlaceCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

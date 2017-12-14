@@ -1,0 +1,33 @@
+server:
+  port: 9999
+
+
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
+
+zuul: 
+  max:
+    host:
+      connections: 100000
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  routes:
+    verify: 
+      path: /verify/**
+      serviceId: verify-server
+    pay: 
+      path: /pay/**
+      serviceId: pay-server
+    blacklist: 
+      path: /blacklist/**
+      serviceId: blacklist-serivce
+    access: 
+      path: /access/**
+      serviceId: access-serivce

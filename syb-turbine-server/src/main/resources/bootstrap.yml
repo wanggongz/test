@@ -1,0 +1,15 @@
+#config服务发现支持
+spring:
+  cloud: 
+    config: 
+      discovery:
+        enabled: true
+        serviceId: config-server              #指定server端的name,也就是server端spring.application.name的值
+      name: config
+      profile: turbine-server-dev,common
+      
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ws:123@localhost:8761/eureka/

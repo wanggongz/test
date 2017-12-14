@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.show.mapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.show.domain.Product">
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="product_type" jdbcType="BIT" property="productType" />
+    <result column="main_pic" jdbcType="VARCHAR" property="mainPic" />
+    <result column="attach_pic" jdbcType="VARCHAR" property="attachPic" />
+    <result column="merits" jdbcType="VARCHAR" property="merits" />
+    <result column="clause_url" jdbcType="VARCHAR" property="clauseUrl" />
+    <result column="instructions_url" jdbcType="VARCHAR" property="instructionsUrl" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="insert_manager" jdbcType="VARCHAR" property="insertManager" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_manager" jdbcType="TIMESTAMP" property="updateManager" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <association property="company" javaType="com.shenpu.proxy.show.domain.Company">
+	    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    </association>
+    <association property="channel" javaType="com.shenpu.proxy.show.domain.Channel">
+    	<result column="channe_name" jdbcType="VARCHAR" property="channeName" />
+    </association>
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shenpu.proxy.show.domain.Product">
+    <result column="product_desc" jdbcType="LONGVARCHAR" property="productDesc" />
+    <result column="health_notice" jdbcType="LONGVARCHAR" property="healthNotice" />
+    <result column="insure_inform" jdbcType="LONGVARCHAR" property="insureInform" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    product_id, product_name, product_code, product_type, main_pic, attach_pic, merits, 
+    clause_url, instructions_url, insert_time, insert_manager, update_time, 
+    update_manager, status
+  </sql>
+  <sql id="Blob_Column_List">
+    product_desc, health_notice, insure_inform
+  </sql>
+  <select id="selectByProduct" parameterType="com.shenpu.proxy.show.domain.Product" resultMap="BaseResultMap">
+    select 
+		t3.product_id, t3.product_name, t3.product_code, 
+      t3.product_type, t3.main_pic, t3.attach_pic, 
+      t3.merits, t3.clause_url, t3.instructions_url, 
+      t3.insert_time, t3.insert_manager, t3.company_id, t3.company_name,
+      t3.update_time, t3.update_manager, t3.status, 
+      t3.product_desc, t3.health_notice, t3.insure_inform,t4.channel_id,t4.channe_name
+	from 
+	(
+		select 
+			t1.product_id, t1.product_name, t1.product_code, 
+	      t1.product_type, t1.main_pic, t1.attach_pic, 
+	      t1.merits, t1.clause_url, t1.instructions_url, 
+	      t1.insert_time, t1.insert_manager,t1.channel_id, 
+	      t1.update_time, t1.update_manager, t1.status, 
+	      t1.product_desc, t1.health_notice, t1.insure_inform,t2.company_id,t2.company_name 
+		from 
+		(select 
+				product_id, product_name, product_code, 
+	      product_type, main_pic, attach_pic, company_id,channel_id,
+	      merits, clause_url, instructions_url, 
+	      insert_time, insert_manager, 
+	      update_time, update_manager, status, 
+	      product_desc, health_notice, insure_inform 
+		from syb_product where 1=1 
+		<if test="productId != null">
+       and product_id = #{productId}
+      </if>
+      <if test="productName != null">
+       and product_name=#{productName}
+      </if>
+      <if test="productCode != null">
+        and product_code=#{productCode}
+      </if>
+      <if test="productType != null">
+         and product_type=#{productType}
+      </if>
+      <if test="mainPic != null">
+         and main_pic=#{mainPic}
+      </if>
+      <if test="attachPic != null">
+         and attach_pic=#{attachPic}
+      </if>
+      <if test="merits != null">
+         and merits=#{merits}
+      </if>
+      <if test="clauseUrl != null">
+         and clause_url=#{clauseUrl}
+      </if>
+      <if test="instructionsUrl != null">
+         and instructions_url=#{instructionsUrl}
+      </if>
+      <if test="insertTime != null">
+         and insert_time=#{insertTime}
+      </if>
+      <if test="insertManager != null">
+         and insert_manager=#{insertManager}
+      </if>
+      <if test="updateTime != null">
+         and update_time=#{updateTime}
+      </if>
+      <if test="updateManager != null">
+         and update_manager=#{updateManager}
+      </if>
+      <if test="status != null">
+         and status=#{status}
+      </if>
+      <if test="productDesc != null">
+         and product_desc=#{productDesc}
+      </if>
+      <if test="healthNotice != null">
+         and health_notice=#{healthNotice}
+      </if>
+      <if test="insureInform != null">
+         and insure_inform = #{insureInform}
+      </if>
+	) t1 
+		left join syb_company t2 
+		on t1.company_id=t2.company_id 
+	)t3 LEFT JOIN syb_channel t4 on t3.channel_id=t4.channel_id 
+    
+  </select>
+  <insert id="insert" parameterType="com.shenpu.proxy.show.domain.Product">
+    insert into syb_product (product_id, product_name, product_code, 
+      product_type, main_pic, attach_pic, 
+      merits, clause_url, instructions_url, 
+      insert_time, insert_manager, 
+      update_time, update_manager, status, 
+      product_desc, health_notice, insure_inform
+      )
+    values (#{productId,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, #{productCode,jdbcType=VARCHAR}, 
+      #{productType,jdbcType=BIT}, #{mainPic,jdbcType=VARCHAR}, #{attachPic,jdbcType=VARCHAR}, 
+      #{merits,jdbcType=VARCHAR}, #{clauseUrl,jdbcType=VARCHAR}, #{instructionsUrl,jdbcType=VARCHAR}, 
+      #{insertTime,jdbcType=TIMESTAMP}, #{insertManager,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateManager,jdbcType=TIMESTAMP}, #{status,jdbcType=BIT}, 
+      #{productDesc,jdbcType=LONGVARCHAR}, #{healthNotice,jdbcType=LONGVARCHAR}, #{insureInform,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.show.domain.Product">
+    insert into syb_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="mainPic != null">
+        main_pic,
+      </if>
+      <if test="attachPic != null">
+        attach_pic,
+      </if>
+      <if test="merits != null">
+        merits,
+      </if>
+      <if test="clauseUrl != null">
+        clause_url,
+      </if>
+      <if test="instructionsUrl != null">
+        instructions_url,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="insertManager != null">
+        insert_manager,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateManager != null">
+        update_manager,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="productDesc != null">
+        product_desc,
+      </if>
+      <if test="healthNotice != null">
+        health_notice,
+      </if>
+      <if test="insureInform != null">
+        insure_inform,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productId != null">
+        #{productId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=BIT},
+      </if>
+      <if test="mainPic != null">
+        #{mainPic,jdbcType=VARCHAR},
+      </if>
+      <if test="attachPic != null">
+        #{attachPic,jdbcType=VARCHAR},
+      </if>
+      <if test="merits != null">
+        #{merits,jdbcType=VARCHAR},
+      </if>
+      <if test="clauseUrl != null">
+        #{clauseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="instructionsUrl != null">
+        #{instructionsUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertManager != null">
+        #{insertManager,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateManager != null">
+        #{updateManager,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="productDesc != null">
+        #{productDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="healthNotice != null">
+        #{healthNotice,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="insureInform != null">
+        #{insureInform,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

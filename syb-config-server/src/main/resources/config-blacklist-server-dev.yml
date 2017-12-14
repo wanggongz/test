@@ -1,0 +1,6 @@
+#mybatis
+mybatis: 
+  typeAliasesPackage: com.shenpu.proxy.blacklist.domain
+
+server:
+  port: 7077

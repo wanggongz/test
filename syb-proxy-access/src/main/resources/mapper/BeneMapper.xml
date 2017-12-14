@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.access.mapper.BeneMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.access.domain.Bene">
+    <result column="bene_id" jdbcType="VARCHAR" property="beneId" />
+    <result column="policy_no" jdbcType="VARCHAR" property="policyNo" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="bene_name" jdbcType="VARCHAR" property="beneName" />
+    <result column="sex" jdbcType="CHAR" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="id_type" jdbcType="VARCHAR" property="idType" />
+    <result column="id_no" jdbcType="VARCHAR" property="idNo" />
+    <result column="occupation" jdbcType="VARCHAR" property="occupation" />
+    <result column="occupation_name" jdbcType="VARCHAR" property="occupationName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="nativeplace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="prov_id" jdbcType="VARCHAR" property="provId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="county_id" jdbcType="VARCHAR" property="countyId" />
+    <result column="map_coordinates" jdbcType="VARCHAR" property="mapCoordinates" />
+    <result column="marriage" jdbcType="CHAR" property="marriage" />
+    <result column="benefit_relation" jdbcType="VARCHAR" property="benefitRelation" />
+    <result column="year_incom" jdbcType="VARCHAR" property="yearIncom" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="bene_grade" jdbcType="VARCHAR" property="beneGrade" />
+    <result column="bene_type" jdbcType="VARCHAR" property="beneType" />
+  </resultMap>
+  <insert id="insert" parameterType="com.shenpu.proxy.access.domain.Bene">
+    insert into syb_bene (bene_id, policy_no, order_no, 
+      apply_no, bene_name, sex, 
+      age, birthday, id_type, 
+      id_no, occupation, occupation_name, 
+      mobile, email, zip_code, 
+      nativeplace, prov_id, city_id, 
+      county_id, map_coordinates, marriage, 
+      benefit_relation, year_incom, height, 
+      weight, status, insert_time, 
+      update_time, bene_grade, bene_type
+      )
+    values (#{beneId,jdbcType=VARCHAR}, #{policyNo,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, 
+      #{applyNo,jdbcType=VARCHAR}, #{beneName,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
+      #{age,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, #{idType,jdbcType=VARCHAR}, 
+      #{idNo,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{occupationName,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, 
+      #{nativeplace,jdbcType=VARCHAR}, #{provId,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, 
+      #{countyId,jdbcType=VARCHAR}, #{mapCoordinates,jdbcType=VARCHAR}, #{marriage,jdbcType=CHAR}, 
+      #{benefitRelation,jdbcType=VARCHAR}, #{yearIncom,jdbcType=VARCHAR}, #{height,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{insertTime,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{beneGrade,jdbcType=VARCHAR}, #{beneType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.access.domain.Bene">
+    insert into syb_bene
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="beneId != null">
+        bene_id,
+      </if>
+      <if test="policyNo != null">
+        policy_no,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="beneName != null">
+        bene_name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idType != null">
+        id_type,
+      </if>
+      <if test="idNo != null">
+        id_no,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="occupationName != null">
+        occupation_name,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="zipCode != null">
+        zip_code,
+      </if>
+      <if test="nativeplace != null">
+        nativeplace,
+      </if>
+      <if test="provId != null">
+        prov_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="countyId != null">
+        county_id,
+      </if>
+      <if test="mapCoordinates != null">
+        map_coordinates,
+      </if>
+      <if test="marriage != null">
+        marriage,
+      </if>
+      <if test="benefitRelation != null">
+        benefit_relation,
+      </if>
+      <if test="yearIncom != null">
+        year_incom,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="beneGrade != null">
+        bene_grade,
+      </if>
+      <if test="beneType != null">
+        bene_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="beneId != null">
+        #{beneId,jdbcType=VARCHAR},
+      </if>
+      <if test="policyNo != null">
+        #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="beneName != null">
+        #{beneName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        #{idType,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationName != null">
+        #{occupationName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="provId != null">
+        #{provId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null">
+        #{countyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mapCoordinates != null">
+        #{mapCoordinates,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null">
+        #{marriage,jdbcType=CHAR},
+      </if>
+      <if test="benefitRelation != null">
+        #{benefitRelation,jdbcType=VARCHAR},
+      </if>
+      <if test="yearIncom != null">
+        #{yearIncom,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="beneGrade != null">
+        #{beneGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="beneType != null">
+        #{beneType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

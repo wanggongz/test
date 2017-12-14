@@ -1,0 +1,1377 @@
+2017-12-06 14:04:42.683 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -
+				Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55: startup date [Wed Dec 06 14:04:42 CST 2017]; root of context hierarchy
+2017-12-06 14:04:42.993 [background-preinit] INFO  org.hibernate.validator.internal.util.Version -
+				HV000001: Hibernate Validator 5.2.4.Final
+2017-12-06 14:04:43.139 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:04:43.188 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:04:43.523 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:04:43.957 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:04:43.958 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:04:44.096 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:04:44.097 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:04:44.477 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:04:44.503 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:04:44.871 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:04:44.875 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Not registering with Eureka server per configuration
+2017-12-06 14:04:44.879 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512540284879 with initial instances count: 2
+2017-12-06 14:04:45.003 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:04:45.004 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:04:45.103 [main] INFO  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Fetching config from server at: http://192.168.1.102:7001/
+2017-12-06 14:04:45.659 [main] INFO  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Located environment: name=config, profiles=[zuul-server-dev, common], label=null, version=null, state=null
+2017-12-06 14:04:45.660 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration -
+				Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='classpath:/config-common.yml'], MapPropertySource [name='classpath:/config-zuul-server-dev.yml']]]
+2017-12-06 14:04:45.700 [main] INFO  com.shenpu.proxy.apigateway.ApiGatewayApplication -
+				No active profile set, falling back to default profiles: default
+2017-12-06 14:04:45.720 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -
+				Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@750ff7d3: startup date [Wed Dec 06 14:04:45 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:04:47.104 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'hystrixFeature' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration$HystrixWebConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration$HystrixWebConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration.class]]
+2017-12-06 14:04:47.374 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'managementServletContext' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcHypermediaManagementContextConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.class]]
+2017-12-06 14:04:47.505 [main] WARN  o.s.c.annotation.ConfigurationClassPostProcessor -
+				Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-12-06 14:04:47.664 [main] INFO  o.springframework.cloud.context.scope.GenericScope -
+				BeanFactory id=211abe16-11a6-32d4-80e8-3fe574dbabf7
+2017-12-06 14:04:47.721 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:04:48.062 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:04:48.562 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer -
+				Tomcat initialized with port(s): 9999 (http)
+2017-12-06 14:04:48.578 [main] INFO  org.apache.catalina.core.StandardService -
+				Starting service Tomcat
+2017-12-06 14:04:48.580 [main] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-12-06 14:04:48.722 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2017-12-06 14:04:48.723 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 3003 ms
+2017-12-06 14:04:49.288 [localhost-startStop-1] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:04:49.288 [localhost-startStop-1] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:04:49.296 [localhost-startStop-1] INFO  com.netflix.config.DynamicPropertyFactory -
+				DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@475e166f
+2017-12-06 14:04:49.555 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'zuulServlet' to [/zuul/*]
+2017-12-06 14:04:49.556 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-06 14:04:49.560 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'metricsFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-12-06 14:04:49.561 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-12-06 14:04:49.584 [localhost-startStop-1] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer -
+				Starting filter initializer context listener
+2017-12-06 14:04:50.268 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:04:50.673 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@750ff7d3: startup date [Wed Dec 06 14:04:45 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:04:50.682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Detected ResponseBodyAdvice bean in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:04:50.815 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-06 14:04:50.816 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-06 14:04:50.884 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:04:50.884 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:04:50.911 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver -
+				Detected ResponseBodyAdvice implementation in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:04:50.954 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:04:51.812 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-12-06 14:04:51.814 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env || /env.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.814 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2017-12-06 14:04:51.815 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/features || /features.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.816 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2017-12-06 14:04:51.816 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2017-12-06 14:04:51.816 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.reset()
+2017-12-06 14:04:51.816 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.getRoutes()
+2017-12-06 14:04:51.817 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/actuator || /actuator.json],produces=[application/json]}" onto public org.springframework.hateoas.ResourceSupport org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint.links()
+2017-12-06 14:04:51.818 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:04:51.818 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/info || /info.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.819 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.820 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-12-06 14:04:51.821 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.822 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.823 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:04:51.823 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-12-06 14:04:51.826 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.827 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2017-12-06 14:04:51.828 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.828 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.828 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/hystrix.stream/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.cloud.netflix.endpoint.ServletWrappingEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:04:51.829 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:04:51.829 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:51.831 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/shutdown || /shutdown.json],methods=[POST]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint.invoke()
+2017-12-06 14:04:51.832 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/health || /health.json],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2017-12-06 14:04:51.832 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:04:51.833 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:04:52.054 [main] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:04:52.055 [main] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:04:52.104 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Shutting down DiscoveryClient ...
+2017-12-06 14:04:52.116 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Completed shut down of DiscoveryClient
+2017-12-06 14:04:52.179 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:04:52.191 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'zuulEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:04:52.192 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-12-06 14:04:52.193 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-12-06 14:04:52.195 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-12-06 14:04:52.195 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:04:52.196 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:04:52.200 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-12-06 14:04:52.213 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2017-12-06 14:04:52.225 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-12-06 14:04:52.249 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'zuulEndpoint': registering with JMX server as MBean [org.springframework.cloud.netflix.zuul:name=zuulEndpoint,type=RoutesEndpoint]
+2017-12-06 14:04:52.254 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=750ff7d3,type=ConfigurationPropertiesRebinder]
+2017-12-06 14:04:52.259 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2017-12-06 14:04:52.260 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:04:52.442 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:04:52.447 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: jolokia:type=Config is already registered. Adding it with jolokia:type=Config,uuid=6b127ffb-5abc-4f9c-9c3d-b1146c8ba6a1, but you should revise your setup in order to either use a qualifier or ensure, that only a single agent gets registered (otherwise history functionality might not work)
+2017-12-06 14:04:52.448 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Cannot register (legacy) MBean handler for config store with name jmx4perl:type=Config since it already exists. This is the case if another agent has been already started within the same JVM. The registration is skipped.
+2017-12-06 14:04:52.448 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Jolokia Discovery MBean registration is skipped because there is already one registered.
+2017-12-06 14:04:52.565 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:04:52.570 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:04:52.594 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:04:52.594 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:04:52.595 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:04:52.595 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:04:52.669 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:04:52.679 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:04:52.679 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:04:52.684 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:04:52.685 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:04:52.685 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:04:52.687 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:04:52.687 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:04:52.695 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:04:52.696 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Starting heartbeat executor: renew interval is: 90
+2017-12-06 14:04:52.699 [main] INFO  com.netflix.discovery.InstanceInfoReplicator -
+				InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-12-06 14:04:52.701 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512540292701 with initial instances count: 2
+2017-12-06 14:04:52.784 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:04:52.786 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Saw local status change event StatusChangeEvent [timestamp=1512540292786, current=UP, previous=STARTING]
+2017-12-06 14:04:52.788 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999: registering service...
+2017-12-06 14:04:52.812 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'featuresEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=featuresEndpoint]
+2017-12-06 14:04:52.823 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - registration status: 204
+2017-12-06 14:04:52.825 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2017-12-06 14:04:52.831 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2017-12-06 14:04:52.834 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2017-12-06 14:04:52.836 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2017-12-06 14:04:52.840 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2017-12-06 14:04:52.842 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2017-12-06 14:04:52.845 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2017-12-06 14:04:52.848 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2017-12-06 14:04:52.850 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2017-12-06 14:04:52.852 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+2017-12-06 14:04:52.857 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2017-12-06 14:04:52.859 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'archaiusEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=archaiusEndpoint]
+2017-12-06 14:04:52.860 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 2147483647
+2017-12-06 14:04:52.866 [main] INFO  o.s.c.n.h.HystrixCircuitBreakerConfiguration$HystrixMetricsPollerConfiguration -
+				Starting poller
+2017-12-06 14:04:52.889 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-9999"]
+2017-12-06 14:04:52.907 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler [http-nio-9999]
+2017-12-06 14:04:52.933 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool -
+				Using a shared selector for servlet write/read
+2017-12-06 14:04:52.953 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer -
+				Tomcat started on port(s): 9999 (http)
+2017-12-06 14:04:52.954 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Updating port to 9999
+2017-12-06 14:04:52.955 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Updating port to 9999
+2017-12-06 14:04:52.959 [main] INFO  com.shenpu.proxy.apigateway.ApiGatewayApplication -
+				Started ApiGatewayApplication in 11.03 seconds (JVM running for 11.508)
+2017-12-06 14:06:22.825 [DiscoveryClient-HeartbeatExecutor-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - Re-registering apps/ZUUL-SERVER
+2017-12-06 14:06:22.826 [DiscoveryClient-HeartbeatExecutor-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999: registering service...
+2017-12-06 14:06:22.833 [DiscoveryClient-HeartbeatExecutor-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - registration status: 204
+2017-12-06 14:09:44.516 [AsyncResolver-bootstrap-0] ERROR com.netflix.discovery.TimedSupervisorTask -
+				task supervisor rejected the task
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@27537a3a rejected from java.util.concurrent.ThreadPoolExecutor@299490a0[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:62)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2017-12-06 14:09:52.692 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:14:52.694 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:19:52.702 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:24:52.708 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:29:52.711 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:30:22.971 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient -
+				Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:832)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1396)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:120)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:117)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 26 common frames omitted
+2017-12-06 14:30:22.973 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient -
+				Request execution failure
+2017-12-06 14:30:22.975 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient -
+				Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:832)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1396)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:120)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:117)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 27 common frames omitted
+2017-12-06 14:30:22.976 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient -
+				Request execution failure
+2017-12-06 14:30:22.978 [DiscoveryClient-HeartbeatExecutor-0] ERROR com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:832)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1396)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2017-12-06 14:30:23.341 [DiscoveryClient-CacheRefreshExecutor-0] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient -
+				Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1064)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:946)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:120)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:117)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 29 common frames omitted
+2017-12-06 14:30:23.343 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient -
+				Request execution failure
+2017-12-06 14:30:23.345 [DiscoveryClient-CacheRefreshExecutor-0] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient -
+				Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1064)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:946)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:120)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:117)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 common frames omitted
+2017-12-06 14:30:23.345 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient -
+				Request execution failure
+2017-12-06 14:30:23.346 [DiscoveryClient-CacheRefreshExecutor-0] ERROR com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1064)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:946)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2017-12-06 14:48:26.582 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -
+				Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55: startup date [Wed Dec 06 14:48:26 CST 2017]; root of context hierarchy
+2017-12-06 14:48:26.874 [background-preinit] INFO  org.hibernate.validator.internal.util.Version -
+				HV000001: Hibernate Validator 5.2.4.Final
+2017-12-06 14:48:27.248 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:48:27.285 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:48:27.614 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:48:28.063 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:48:28.063 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:48:28.194 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:48:28.194 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:48:28.475 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:48:28.500 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:48:28.633 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:48:28.635 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Not registering with Eureka server per configuration
+2017-12-06 14:48:28.638 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512542908637 with initial instances count: 0
+2017-12-06 14:48:28.761 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:48:28.762 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:48:28.765 [main] WARN  o.s.c.c.c.DiscoveryClientConfigServiceBootstrapConfiguration -
+				No instances found of configserver (config-server)
+2017-12-06 14:48:28.866 [main] INFO  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Fetching config from server at: http://localhost:8888
+2017-12-06 14:48:29.075 [main] WARN  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/config/zuul-server-dev,common": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2017-12-06 14:48:29.076 [main] INFO  com.shenpu.proxy.apigateway.ApiGatewayApplication -
+				No active profile set, falling back to default profiles: default
+2017-12-06 14:48:29.111 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -
+				Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1dd7796b: startup date [Wed Dec 06 14:48:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:48:29.887 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'hystrixFeature' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration$HystrixWebConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration$HystrixWebConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration.class]]
+2017-12-06 14:48:30.118 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'managementServletContext' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcHypermediaManagementContextConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.class]]
+2017-12-06 14:48:30.233 [main] WARN  o.s.c.annotation.ConfigurationClassPostProcessor -
+				Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-12-06 14:48:30.397 [main] INFO  o.springframework.cloud.context.scope.GenericScope -
+				BeanFactory id=2f80b6b3-3c4b-3ae3-a288-81d78611d9cb
+2017-12-06 14:48:30.457 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:48:30.729 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:48:31.127 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer -
+				Tomcat initialized with port(s): 8080 (http)
+2017-12-06 14:48:31.141 [main] INFO  org.apache.catalina.core.StandardService -
+				Starting service Tomcat
+2017-12-06 14:48:31.142 [main] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-12-06 14:48:31.274 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2017-12-06 14:48:31.274 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 2163 ms
+2017-12-06 14:48:31.863 [localhost-startStop-1] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:48:31.863 [localhost-startStop-1] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:48:31.870 [localhost-startStop-1] INFO  com.netflix.config.DynamicPropertyFactory -
+				DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@25defbe1
+2017-12-06 14:48:32.061 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'zuulServlet' to [/zuul/*]
+2017-12-06 14:48:32.062 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-06 14:48:32.067 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'metricsFilter' to: [/*]
+2017-12-06 14:48:32.067 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-06 14:48:32.067 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-06 14:48:32.067 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-06 14:48:32.067 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-06 14:48:32.068 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-12-06 14:48:32.068 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-12-06 14:48:32.090 [localhost-startStop-1] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer -
+				Starting filter initializer context listener
+2017-12-06 14:48:32.792 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:48:33.122 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1dd7796b: startup date [Wed Dec 06 14:48:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:48:33.131 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Detected ResponseBodyAdvice bean in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:48:33.368 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-06 14:48:33.369 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-06 14:48:33.546 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:48:33.546 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:48:33.626 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver -
+				Detected ResponseBodyAdvice implementation in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:48:33.730 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:48:34.677 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.reset()
+2017-12-06 14:48:34.680 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.getRoutes()
+2017-12-06 14:48:34.681 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/health || /health.json],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2017-12-06 14:48:34.682 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/hystrix.stream/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.cloud.netflix.endpoint.ServletWrappingEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:48:34.685 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/features || /features.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.686 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.687 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.688 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-12-06 14:48:34.688 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env || /env.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.689 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.689 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2017-12-06 14:48:34.692 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-12-06 14:48:34.692 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.693 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2017-12-06 14:48:34.694 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2017-12-06 14:48:34.695 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-12-06 14:48:34.695 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:48:34.699 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.699 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/actuator || /actuator.json],produces=[application/json]}" onto public org.springframework.hateoas.ResourceSupport org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint.links()
+2017-12-06 14:48:34.700 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.702 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:48:34.703 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.704 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:34.704 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:48:34.705 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:48:34.705 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/info || /info.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:48:35.041 [main] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:48:35.042 [main] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:48:35.100 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Shutting down DiscoveryClient ...
+2017-12-06 14:48:35.117 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Completed shut down of DiscoveryClient
+2017-12-06 14:48:35.207 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:48:35.224 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'zuulEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:48:35.226 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-12-06 14:48:35.226 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-12-06 14:48:35.228 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-12-06 14:48:35.231 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:48:35.231 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:48:35.237 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-12-06 14:48:35.253 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2017-12-06 14:48:35.267 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-12-06 14:48:35.281 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'zuulEndpoint': registering with JMX server as MBean [org.springframework.cloud.netflix.zuul:name=zuulEndpoint,type=RoutesEndpoint]
+2017-12-06 14:48:35.284 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=1dd7796b,type=ConfigurationPropertiesRebinder]
+2017-12-06 14:48:35.297 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2017-12-06 14:48:35.302 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:48:35.471 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:48:35.475 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: jolokia:type=Config is already registered. Adding it with jolokia:type=Config,uuid=2ef989e3-eded-4112-a7f4-d4fb4045c522, but you should revise your setup in order to either use a qualifier or ensure, that only a single agent gets registered (otherwise history functionality might not work)
+2017-12-06 14:48:35.476 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Cannot register (legacy) MBean handler for config store with name jmx4perl:type=Config since it already exists. This is the case if another agent has been already started within the same JVM. The registration is skipped.
+2017-12-06 14:48:35.476 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Jolokia Discovery MBean registration is skipped because there is already one registered.
+2017-12-06 14:48:35.601 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:48:35.606 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:48:35.632 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:48:35.634 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:48:35.634 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:48:35.635 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:48:35.743 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:48:35.745 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:48:35.745 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:48:35.745 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:48:35.745 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:48:35.746 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:48:35.746 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:48:35.746 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:48:35.776 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:48:35.777 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Starting heartbeat executor: renew interval is: 30
+2017-12-06 14:48:35.781 [main] INFO  com.netflix.discovery.InstanceInfoReplicator -
+				InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-12-06 14:48:35.783 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512542915783 with initial instances count: 1
+2017-12-06 14:48:35.875 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:48:35.876 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Saw local status change event StatusChangeEvent [timestamp=1512542915876, current=UP, previous=STARTING]
+2017-12-06 14:48:35.879 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server: registering service...
+2017-12-06 14:48:35.898 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'featuresEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=featuresEndpoint]
+2017-12-06 14:48:35.910 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server - registration status: 204
+2017-12-06 14:48:35.913 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2017-12-06 14:48:35.916 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2017-12-06 14:48:35.919 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2017-12-06 14:48:35.921 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2017-12-06 14:48:35.923 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2017-12-06 14:48:35.925 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2017-12-06 14:48:35.928 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2017-12-06 14:48:35.932 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2017-12-06 14:48:35.935 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2017-12-06 14:48:35.937 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2017-12-06 14:48:35.940 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'archaiusEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=archaiusEndpoint]
+2017-12-06 14:48:35.941 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 2147483647
+2017-12-06 14:48:35.956 [main] INFO  o.s.c.n.h.HystrixCircuitBreakerConfiguration$HystrixMetricsPollerConfiguration -
+				Starting poller
+2017-12-06 14:48:35.978 [main] WARN  o.s.c.c.c.DiscoveryClientConfigServiceBootstrapConfiguration -
+				No instances found of configserver (config-server)
+2017-12-06 14:48:35.984 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8080"]
+2017-12-06 14:48:36.004 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler [http-nio-8080]
+2017-12-06 14:48:36.024 [main] ERROR org.apache.coyote.http11.Http11NioProtocol -
+				Failed to start end point associated with ProtocolHandler [http-nio-8080]
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:228)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:134)
+	at com.shenpu.proxy.apigateway.ApiGatewayApplication.main(ApiGatewayApplication.java:37)
+2017-12-06 14:48:36.025 [main] ERROR org.apache.catalina.core.StandardService -
+				Failed to start connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:134)
+	at com.shenpu.proxy.apigateway.ApiGatewayApplication.main(ApiGatewayApplication.java:37)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 12 common frames omitted
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:228)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 13 common frames omitted
+2017-12-06 14:48:36.036 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Pausing ProtocolHandler ["http-nio-8080"]
+2017-12-06 14:48:36.036 [main] INFO  org.apache.catalina.core.StandardService -
+				Stopping service Tomcat
+2017-12-06 14:48:36.041 [localhost-startStop-1] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer -
+				Stopping filter initializer context listener
+2017-12-06 14:48:36.069 [localhost-startStop-1] WARN  org.apache.catalina.loader.WebappClassLoaderBase -
+				The web application [ROOT] appears to have started a thread named [SimpleHostRoutingFilter.connectionManagerTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Timer.java:552)
+ java.util.TimerThread.run(Timer.java:505)
+2017-12-06 14:48:36.070 [localhost-startStop-1] WARN  org.apache.catalina.loader.WebappClassLoaderBase -
+				The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2017-12-06 14:48:36.074 [main] INFO  org.apache.catalina.util.LifecycleBase -
+				The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2017-12-06 14:48:36.074 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Stopping ProtocolHandler ["http-nio-8080"]
+2017-12-06 14:48:36.074 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Destroying ProtocolHandler ["http-nio-8080"]
+2017-12-06 14:48:36.078 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer -
+				
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-12-06 14:48:36.081 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter -
+				
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2017-12-06 14:48:36.082 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -
+				Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1dd7796b: startup date [Wed Dec 06 14:48:29 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:48:36.083 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Unregistering application zuul-server with eureka with status DOWN
+2017-12-06 14:48:36.083 [main] WARN  com.netflix.discovery.DiscoveryClient -
+				Saw local status change event StatusChangeEvent [timestamp=1512542916083, current=DOWN, previous=UP]
+2017-12-06 14:48:36.083 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server: registering service...
+2017-12-06 14:48:36.083 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Shutting down DiscoveryClient ...
+2017-12-06 14:48:36.084 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Unregistering ...
+2017-12-06 14:48:36.103 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server - registration status: 204
+2017-12-06 14:48:36.105 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server - deregister  status: 200
+2017-12-06 14:48:36.120 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Completed shut down of DiscoveryClient
+2017-12-06 14:48:36.120 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Unregistering application zuul-server with eureka with status DOWN
+2017-12-06 14:48:36.121 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Stopping beans in phase 2147483647
+2017-12-06 14:48:36.123 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Stopping beans in phase 0
+2017-12-06 14:48:36.125 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Unregistering JMX-exposed beans on shutdown
+2017-12-06 14:48:36.125 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Unregistering JMX-exposed beans
+2017-12-06 14:48:36.126 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Unregistering JMX-exposed beans on shutdown
+2017-12-06 14:48:36.126 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Unregistering JMX-exposed beans
+2017-12-06 14:48:36.152 [main] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:48:36.152 [main] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:50:19.706 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -
+				Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55: startup date [Wed Dec 06 14:50:19 CST 2017]; root of context hierarchy
+2017-12-06 14:50:19.979 [background-preinit] INFO  org.hibernate.validator.internal.util.Version -
+				HV000001: Hibernate Validator 5.2.4.Final
+2017-12-06 14:50:20.210 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:50:20.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:50:20.589 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:50:20.957 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:50:20.957 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:50:21.079 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:50:21.079 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:50:21.414 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:50:21.447 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:50:21.447 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:50:21.447 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:50:21.447 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:50:21.447 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:50:21.448 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:50:21.448 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:50:21.686 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:50:21.689 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Not registering with Eureka server per configuration
+2017-12-06 14:50:21.695 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512543021695 with initial instances count: 1
+2017-12-06 14:50:21.866 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:50:21.867 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:50:21.989 [main] INFO  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Fetching config from server at: http://192.168.1.102:7001/
+2017-12-06 14:50:22.401 [main] INFO  o.s.c.c.client.ConfigServicePropertySourceLocator -
+				Located environment: name=config, profiles=[zuul-server-dev, common], label=null, version=null, state=null
+2017-12-06 14:50:22.402 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration -
+				Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='classpath:/config-common.yml'], MapPropertySource [name='classpath:/config-zuul-server-dev.yml']]]
+2017-12-06 14:50:22.440 [main] INFO  com.shenpu.proxy.apigateway.ApiGatewayApplication -
+				No active profile set, falling back to default profiles: default
+2017-12-06 14:50:22.474 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -
+				Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@750ff7d3: startup date [Wed Dec 06 14:50:22 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:50:23.526 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'hystrixFeature' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration$HystrixWebConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration$HystrixWebConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerConfiguration; factoryMethodName=hystrixFeature; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/hystrix/HystrixCircuitBreakerConfiguration.class]]
+2017-12-06 14:50:23.717 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory -
+				Overriding bean definition for bean 'managementServletContext' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcHypermediaManagementContextConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.class]]
+2017-12-06 14:50:23.822 [main] WARN  o.s.c.annotation.ConfigurationClassPostProcessor -
+				Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-12-06 14:50:23.974 [main] INFO  o.springframework.cloud.context.scope.GenericScope -
+				BeanFactory id=211abe16-11a6-32d4-80e8-3fe574dbabf7
+2017-12-06 14:50:24.041 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:50:24.382 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b65d3fca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-12-06 14:50:25.088 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer -
+				Tomcat initialized with port(s): 9999 (http)
+2017-12-06 14:50:25.101 [main] INFO  org.apache.catalina.core.StandardService -
+				Starting service Tomcat
+2017-12-06 14:50:25.102 [main] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-12-06 14:50:25.237 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2017-12-06 14:50:25.237 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 2763 ms
+2017-12-06 14:50:25.813 [localhost-startStop-1] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:50:25.813 [localhost-startStop-1] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:50:25.821 [localhost-startStop-1] INFO  com.netflix.config.DynamicPropertyFactory -
+				DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2f673bd5
+2017-12-06 14:50:25.974 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'zuulServlet' to [/zuul/*]
+2017-12-06 14:50:25.977 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean -
+				Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-06 14:50:25.981 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'metricsFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-12-06 14:50:25.982 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean -
+				Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-12-06 14:50:26.004 [localhost-startStop-1] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer -
+				Starting filter initializer context listener
+2017-12-06 14:50:26.722 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:50:27.146 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@750ff7d3: startup date [Wed Dec 06 14:50:22 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6a4f1a55
+2017-12-06 14:50:27.154 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -
+				Detected ResponseBodyAdvice bean in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:50:27.290 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-06 14:50:27.291 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -
+				Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-06 14:50:27.381 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:50:27.381 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:50:27.405 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver -
+				Detected ResponseBodyAdvice implementation in org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration$ActuatorEndpointLinksAdvice
+2017-12-06 14:50:27.451 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -
+				Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-06 14:50:28.512 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-12-06 14:50:28.513 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env || /env.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.513 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2017-12-06 14:50:28.514 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/features || /features.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.514 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2017-12-06 14:50:28.515 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2017-12-06 14:50:28.515 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.reset()
+2017-12-06 14:50:28.515 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/routes || /routes.json],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> org.springframework.cloud.netflix.zuul.RoutesEndpoint.getRoutes()
+2017-12-06 14:50:28.516 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/actuator || /actuator.json],produces=[application/json]}" onto public org.springframework.hateoas.ResourceSupport org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint.links()
+2017-12-06 14:50:28.516 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:50:28.517 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/info || /info.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.518 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.518 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-12-06 14:50:28.519 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.521 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.521 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:50:28.522 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-12-06 14:50:28.524 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.526 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2017-12-06 14:50:28.526 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.527 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.527 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/hystrix.stream/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.cloud.netflix.endpoint.ServletWrappingEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:50:28.528 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-12-06 14:50:28.528 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.530 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/shutdown || /shutdown.json],methods=[POST]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint.invoke()
+2017-12-06 14:50:28.531 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/health || /health.json],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2017-12-06 14:50:28.531 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2017-12-06 14:50:28.532 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping -
+				Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-12-06 14:50:28.722 [main] WARN  com.netflix.config.sources.URLConfigurationSource -
+				No URLs will be polled as dynamic configuration sources.
+2017-12-06 14:50:28.722 [main] INFO  com.netflix.config.sources.URLConfigurationSource -
+				To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-12-06 14:50:28.776 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Shutting down DiscoveryClient ...
+2017-12-06 14:50:28.793 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Completed shut down of DiscoveryClient
+2017-12-06 14:50:28.849 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:50:28.858 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'zuulEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:50:28.859 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-12-06 14:50:28.860 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-12-06 14:50:28.863 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-12-06 14:50:28.864 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:50:28.864 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2017-12-06 14:50:28.867 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-12-06 14:50:28.885 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2017-12-06 14:50:28.895 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-12-06 14:50:28.907 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'zuulEndpoint': registering with JMX server as MBean [org.springframework.cloud.netflix.zuul:name=zuulEndpoint,type=RoutesEndpoint]
+2017-12-06 14:50:28.910 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=750ff7d3,type=ConfigurationPropertiesRebinder]
+2017-12-06 14:50:28.915 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -
+				Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2017-12-06 14:50:28.917 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Registering beans for JMX exposure on startup
+2017-12-06 14:50:29.080 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: No access restrictor found, access to any MBean is allowed
+2017-12-06 14:50:29.085 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: jolokia:type=Config is already registered. Adding it with jolokia:type=Config,uuid=20a2c0ff-b871-4a7e-89f3-fe58632f72b8, but you should revise your setup in order to either use a qualifier or ensure, that only a single agent gets registered (otherwise history functionality might not work)
+2017-12-06 14:50:29.085 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Cannot register (legacy) MBean handler for config store with name jmx4perl:type=Config since it already exists. This is the case if another agent has been already started within the same JVM. The registration is skipped.
+2017-12-06 14:50:29.085 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				jolokia: Jolokia Discovery MBean registration is skipped because there is already one registered.
+2017-12-06 14:50:29.192 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 0
+2017-12-06 14:50:29.200 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory -
+				Setting initial instance status as: STARTING
+2017-12-06 14:50:29.223 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON encoding codec LegacyJacksonJson
+2017-12-06 14:50:29.224 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using JSON decoding codec LegacyJacksonJson
+2017-12-06 14:50:29.224 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML encoding codec XStreamXml
+2017-12-06 14:50:29.224 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider -
+				Using XML decoding codec XStreamXml
+2017-12-06 14:50:29.294 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 14:50:29.296 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Disable delta property : false
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Single vip registry refresh property : null
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Force full registry fetch : false
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application is null : false
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Registered Applications size is zero : true
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Application version is -1: true
+2017-12-06 14:50:29.297 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Getting all instance registry info from the eureka server
+2017-12-06 14:50:29.306 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				The response status is 200
+2017-12-06 14:50:29.309 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Starting heartbeat executor: renew interval is: 90
+2017-12-06 14:50:29.313 [main] INFO  com.netflix.discovery.InstanceInfoReplicator -
+				InstanceInfoReplicator onDemand update allowed rate per min is 4
+2017-12-06 14:50:29.315 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Discovery Client initialized at timestamp 1512543029315 with initial instances count: 1
+2017-12-06 14:50:29.390 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Registering application zuul-server with eureka with status UP
+2017-12-06 14:50:29.391 [main] INFO  com.netflix.discovery.DiscoveryClient -
+				Saw local status change event StatusChangeEvent [timestamp=1512543029391, current=UP, previous=STARTING]
+2017-12-06 14:50:29.393 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999: registering service...
+2017-12-06 14:50:29.396 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'featuresEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=featuresEndpoint]
+2017-12-06 14:50:29.407 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2017-12-06 14:50:29.413 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2017-12-06 14:50:29.416 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2017-12-06 14:50:29.419 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2017-12-06 14:50:29.421 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2017-12-06 14:50:29.425 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient -
+				DiscoveryClient_ZUUL-SERVER/192.168.1.102:zuul-server:9999 - registration status: 204
+2017-12-06 14:50:29.428 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2017-12-06 14:50:29.433 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2017-12-06 14:50:29.437 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2017-12-06 14:50:29.439 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2017-12-06 14:50:29.441 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+2017-12-06 14:50:29.446 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2017-12-06 14:50:29.449 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter -
+				Located managed bean 'archaiusEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=archaiusEndpoint]
+2017-12-06 14:50:29.451 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -
+				Starting beans in phase 2147483647
+2017-12-06 14:50:29.458 [main] INFO  o.s.c.n.h.HystrixCircuitBreakerConfiguration$HystrixMetricsPollerConfiguration -
+				Starting poller
+2017-12-06 14:50:29.492 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-9999"]
+2017-12-06 14:50:29.521 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler [http-nio-9999]
+2017-12-06 14:50:29.558 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool -
+				Using a shared selector for servlet write/read
+2017-12-06 14:50:29.579 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer -
+				Tomcat started on port(s): 9999 (http)
+2017-12-06 14:50:29.580 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Updating port to 9999
+2017-12-06 14:50:29.581 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration -
+				Updating port to 9999
+2017-12-06 14:50:29.585 [main] INFO  com.shenpu.proxy.apigateway.ApiGatewayApplication -
+				Started ApiGatewayApplication in 10.634 seconds (JVM running for 11.065)
+2017-12-06 14:54:15.533 [http-nio-9999-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-12-06 14:54:15.535 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				FrameworkServlet 'dispatcherServlet': initialization started
+2017-12-06 14:54:15.596 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				FrameworkServlet 'dispatcherServlet': initialization completed in 60 ms
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/verify/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/pay/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/blacklist/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/access/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/config-server/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.623 [http-nio-9999-exec-1] INFO  o.s.cloud.netflix.zuul.web.ZuulHandlerMapping -
+				Mapped URL path [/blacklist-server/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
+2017-12-06 14:54:15.713 [http-nio-9999-exec-1] INFO  o.s.c.a.AnnotationConfigApplicationContext -
+				Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4a76f82d: startup date [Wed Dec 06 14:54:15 CST 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@750ff7d3
+2017-12-06 14:54:15.788 [http-nio-9999-exec-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -
+				JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-12-06 14:54:16.060 [http-nio-9999-exec-1] INFO  com.netflix.config.ChainedDynamicProperty -
+				Flipping property: blacklist-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2017-12-06 14:54:16.084 [http-nio-9999-exec-1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer -
+				Shutdown hook installed for: NFLoadBalancer-PingTimer-blacklist-server
+2017-12-06 14:54:16.119 [http-nio-9999-exec-1] INFO  com.netflix.loadbalancer.BaseLoadBalancer -
+				Client:blacklist-server instantiated a LoadBalancer:DynamicServerListLoadBalancer:{NFLoadBalancer:name=blacklist-server,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2017-12-06 14:54:16.125 [http-nio-9999-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer -
+				Using serverListUpdater PollingServerListUpdater
+2017-12-06 14:54:16.161 [http-nio-9999-exec-1] INFO  com.netflix.config.ChainedDynamicProperty -
+				Flipping property: blacklist-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2017-12-06 14:54:16.164 [http-nio-9999-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer -
+				DynamicServerListLoadBalancer for client blacklist-server initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=blacklist-server,current list of Servers=[192.168.1.102:blacklist-server:347537be42cd7e1efaeaecc9e1b3c23d],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.1.102:blacklist-server:347537be42cd7e1efaeaecc9e1b3c23d;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@9ea278f
+2017-12-06 14:54:17.129 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty -
+				Flipping property: blacklist-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2017-12-06 14:55:21.462 [AsyncResolver-bootstrap-0] ERROR com.netflix.discovery.TimedSupervisorTask -
+				task supervisor rejected the task
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@5bf64633 rejected from java.util.concurrent.ThreadPoolExecutor@5531b33d[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:62)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2017-12-06 14:55:29.302 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 15:00:29.308 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 15:05:29.318 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 15:10:29.327 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration
+2017-12-06 15:15:29.331 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver -
+				Resolving eureka endpoints via configuration

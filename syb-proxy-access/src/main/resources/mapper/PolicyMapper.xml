@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.access.mapper.PolicyMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.access.domain.Policy">
+    <id column="policy_id" jdbcType="VARCHAR" property="policyId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="access_date" jdbcType="VARCHAR" property="accessDate" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="policy_no" jdbcType="VARCHAR" property="policyNo" />
+    <result column="effective_date" jdbcType="VARCHAR" property="effectiveDate" />
+    <result column="term_date" jdbcType="VARCHAR" property="termDate" />
+    <result column="order_state" jdbcType="VARCHAR" property="orderState" />
+    <result column="is_notice" jdbcType="VARCHAR" property="isNotice" />
+    <result column="agency_code" jdbcType="VARCHAR" property="agencyCode" />
+    <result column="outeragent_code" jdbcType="VARCHAR" property="outeragentCode" />
+    <result column="agency_hand" jdbcType="VARCHAR" property="agencyHand" />
+    <result column="agent_code" jdbcType="VARCHAR" property="agentCode" />
+    <result column="organ_id" jdbcType="VARCHAR" property="organId" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="initial_premium" jdbcType="DECIMAL" property="initialPremium" />
+    <result column="total_premium" jdbcType="DECIMAL" property="totalPremium" />
+    <result column="first_payment_period" jdbcType="DECIMAL" property="firstPaymentPeriod" />
+    <result column="overdue_type" jdbcType="VARCHAR" property="overdueType" />
+    <result column="delivery_mode" jdbcType="VARCHAR" property="deliveryMode" />
+    <result column="auto_renewal" jdbcType="VARCHAR" property="autoRenewal" />
+    <result column="phone_visit" jdbcType="VARCHAR" property="phoneVisit" />
+    <result column="is_underwrite" jdbcType="VARCHAR" property="isUnderwrite" />
+    <result column="uw_cause" jdbcType="VARCHAR" property="uwCause" />
+    <result column="uw_memo" jdbcType="VARCHAR" property="uwMemo" />
+    <result column="manual_cause" jdbcType="VARCHAR" property="manualCause" />
+    <result column="mult" jdbcType="INTEGER" property="mult" />
+    <result column="insu_way" jdbcType="VARCHAR" property="insuWay" />
+    <result column="policy_term" jdbcType="VARCHAR" property="policyTerm" />
+    <result column="premium_term" jdbcType="VARCHAR" property="premiumTerm" />
+    <result column="payintv" jdbcType="VARCHAR" property="payintv" />
+    <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="policy_term_util" jdbcType="VARCHAR" property="policyTermUtil" />
+    <result column="faceamount" jdbcType="VARCHAR" property="faceamount" />
+    <result column="issue_date" jdbcType="VARCHAR" property="issueDate" />
+    <result column="proposal_no" jdbcType="VARCHAR" property="proposalNo" />
+    <result column="is_success" jdbcType="VARCHAR" property="isSuccess" />
+    <result column="issued_info" jdbcType="VARCHAR" property="issuedInfo" />
+    <result column="policy_url" jdbcType="VARCHAR" property="policyUrl" />
+    <result column="sign_date" jdbcType="VARCHAR" property="signDate" />
+    <result column="is_verify" jdbcType="INTEGER" property="isVerify" />
+    <result column="is_access" jdbcType="INTEGER" property="isAccess" />
+    <result column="is_print" jdbcType="INTEGER" property="isPrint" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    policy_id, order_no, access_date, apply_no, policy_no, effective_date, term_date, 
+    order_state, is_notice, agency_code, outeragent_code, agency_hand, agent_code, organ_id, 
+    product_code, initial_premium, total_premium, first_payment_period, overdue_type, 
+    delivery_mode, auto_renewal, phone_visit, is_underwrite, uw_cause, uw_memo, manual_cause, 
+    mult, insu_way, policy_term, premium_term, payintv, insert_time, update_time, product_name, 
+    policy_term_util, faceamount, issue_date, proposal_no, is_success, issued_info, policy_url, 
+    sign_date, is_verify, is_access, is_print
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_policy
+    where policy_id = #{policyId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByApplyNo" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_policy
+    where apply_no = #{applyNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from syb_policy
+    where policy_id = #{policyId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shenpu.proxy.access.domain.Policy">
+    insert into syb_policy (policy_id, order_no, access_date, 
+      apply_no, policy_no, effective_date, 
+      term_date, order_state, is_notice, 
+      agency_code, outeragent_code, agency_hand, 
+      agent_code, organ_id, product_code, 
+      initial_premium, total_premium, first_payment_period, 
+      overdue_type, delivery_mode, auto_renewal, 
+      phone_visit, is_underwrite, uw_cause, 
+      uw_memo, manual_cause, mult, 
+      insu_way, policy_term, premium_term, 
+      payintv, insert_time, update_time, 
+      product_name, policy_term_util, faceamount, 
+      issue_date, proposal_no, is_success, 
+      issued_info, policy_url, sign_date, 
+      is_verify, is_access, is_print)
+    values (#{policyId,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, #{accessDate,jdbcType=VARCHAR}, 
+      #{applyNo,jdbcType=VARCHAR}, #{policyNo,jdbcType=VARCHAR}, #{effectiveDate,jdbcType=VARCHAR}, 
+      #{termDate,jdbcType=VARCHAR}, #{orderState,jdbcType=VARCHAR}, #{isNotice,jdbcType=VARCHAR}, 
+      #{agencyCode,jdbcType=VARCHAR}, #{outeragentCode,jdbcType=VARCHAR}, #{agencyHand,jdbcType=VARCHAR}, 
+      #{agentCode,jdbcType=VARCHAR}, #{organId,jdbcType=VARCHAR}, #{productCode,jdbcType=VARCHAR}, 
+      #{initialPremium,jdbcType=DECIMAL}, #{totalPremium,jdbcType=DECIMAL}, #{firstPaymentPeriod,jdbcType=DECIMAL}, 
+      #{overdueType,jdbcType=VARCHAR}, #{deliveryMode,jdbcType=VARCHAR}, #{autoRenewal,jdbcType=VARCHAR}, 
+      #{phoneVisit,jdbcType=VARCHAR}, #{isUnderwrite,jdbcType=VARCHAR}, #{uwCause,jdbcType=VARCHAR}, 
+      #{uwMemo,jdbcType=VARCHAR}, #{manualCause,jdbcType=VARCHAR}, #{mult,jdbcType=INTEGER}, 
+      #{insuWay,jdbcType=VARCHAR}, #{policyTerm,jdbcType=VARCHAR}, #{premiumTerm,jdbcType=VARCHAR}, 
+      #{payintv,jdbcType=VARCHAR}, #{insertTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{policyTermUtil,jdbcType=VARCHAR}, #{faceamount,jdbcType=VARCHAR}, 
+      #{issueDate,jdbcType=VARCHAR}, #{proposalNo,jdbcType=VARCHAR}, #{isSuccess,jdbcType=VARCHAR}, 
+      #{issuedInfo,jdbcType=VARCHAR}, #{policyUrl,jdbcType=VARCHAR}, #{signDate,jdbcType=VARCHAR}, 
+      #{isVerify,jdbcType=INTEGER}, #{isAccess,jdbcType=INTEGER}, #{isPrint,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.access.domain.Policy">
+    insert into syb_policy
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="policyId != null">
+        policy_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="accessDate != null">
+        access_date,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="policyNo != null">
+        policy_no,
+      </if>
+      <if test="effectiveDate != null">
+        effective_date,
+      </if>
+      <if test="termDate != null">
+        term_date,
+      </if>
+      <if test="orderState != null">
+        order_state,
+      </if>
+      <if test="isNotice != null">
+        is_notice,
+      </if>
+      <if test="agencyCode != null">
+        agency_code,
+      </if>
+      <if test="outeragentCode != null">
+        outeragent_code,
+      </if>
+      <if test="agencyHand != null">
+        agency_hand,
+      </if>
+      <if test="agentCode != null">
+        agent_code,
+      </if>
+      <if test="organId != null">
+        organ_id,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="initialPremium != null">
+        initial_premium,
+      </if>
+      <if test="totalPremium != null">
+        total_premium,
+      </if>
+      <if test="firstPaymentPeriod != null">
+        first_payment_period,
+      </if>
+      <if test="overdueType != null">
+        overdue_type,
+      </if>
+      <if test="deliveryMode != null">
+        delivery_mode,
+      </if>
+      <if test="autoRenewal != null">
+        auto_renewal,
+      </if>
+      <if test="phoneVisit != null">
+        phone_visit,
+      </if>
+      <if test="isUnderwrite != null">
+        is_underwrite,
+      </if>
+      <if test="uwCause != null">
+        uw_cause,
+      </if>
+      <if test="uwMemo != null">
+        uw_memo,
+      </if>
+      <if test="manualCause != null">
+        manual_cause,
+      </if>
+      <if test="mult != null">
+        mult,
+      </if>
+      <if test="insuWay != null">
+        insu_way,
+      </if>
+      <if test="policyTerm != null">
+        policy_term,
+      </if>
+      <if test="premiumTerm != null">
+        premium_term,
+      </if>
+      <if test="payintv != null">
+        payintv,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="policyTermUtil != null">
+        policy_term_util,
+      </if>
+      <if test="faceamount != null">
+        faceamount,
+      </if>
+      <if test="issueDate != null">
+        issue_date,
+      </if>
+      <if test="proposalNo != null">
+        proposal_no,
+      </if>
+      <if test="isSuccess != null">
+        is_success,
+      </if>
+      <if test="issuedInfo != null">
+        issued_info,
+      </if>
+      <if test="policyUrl != null">
+        policy_url,
+      </if>
+      <if test="signDate != null">
+        sign_date,
+      </if>
+      <if test="isVerify != null">
+        is_verify,
+      </if>
+      <if test="isAccess != null">
+        is_access,
+      </if>
+      <if test="isPrint != null">
+        is_print,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="policyId != null">
+        #{policyId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="accessDate != null">
+        #{accessDate,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="policyNo != null">
+        #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="effectiveDate != null">
+        #{effectiveDate,jdbcType=VARCHAR},
+      </if>
+      <if test="termDate != null">
+        #{termDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orderState != null">
+        #{orderState,jdbcType=VARCHAR},
+      </if>
+      <if test="isNotice != null">
+        #{isNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyCode != null">
+        #{agencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="outeragentCode != null">
+        #{outeragentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyHand != null">
+        #{agencyHand,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null">
+        #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organId != null">
+        #{organId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="initialPremium != null">
+        #{initialPremium,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPremium != null">
+        #{totalPremium,jdbcType=DECIMAL},
+      </if>
+      <if test="firstPaymentPeriod != null">
+        #{firstPaymentPeriod,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueType != null">
+        #{overdueType,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryMode != null">
+        #{deliveryMode,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRenewal != null">
+        #{autoRenewal,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneVisit != null">
+        #{phoneVisit,jdbcType=VARCHAR},
+      </if>
+      <if test="isUnderwrite != null">
+        #{isUnderwrite,jdbcType=VARCHAR},
+      </if>
+      <if test="uwCause != null">
+        #{uwCause,jdbcType=VARCHAR},
+      </if>
+      <if test="uwMemo != null">
+        #{uwMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="manualCause != null">
+        #{manualCause,jdbcType=VARCHAR},
+      </if>
+      <if test="mult != null">
+        #{mult,jdbcType=INTEGER},
+      </if>
+      <if test="insuWay != null">
+        #{insuWay,jdbcType=VARCHAR},
+      </if>
+      <if test="policyTerm != null">
+        #{policyTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="premiumTerm != null">
+        #{premiumTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="payintv != null">
+        #{payintv,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="policyTermUtil != null">
+        #{policyTermUtil,jdbcType=VARCHAR},
+      </if>
+      <if test="faceamount != null">
+        #{faceamount,jdbcType=VARCHAR},
+      </if>
+      <if test="issueDate != null">
+        #{issueDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proposalNo != null">
+        #{proposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isSuccess != null">
+        #{isSuccess,jdbcType=VARCHAR},
+      </if>
+      <if test="issuedInfo != null">
+        #{issuedInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="policyUrl != null">
+        #{policyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isVerify != null">
+        #{isVerify,jdbcType=INTEGER},
+      </if>
+      <if test="isAccess != null">
+        #{isAccess,jdbcType=INTEGER},
+      </if>
+      <if test="isPrint != null">
+        #{isPrint,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shenpu.proxy.access.domain.Policy">
+    update syb_policy
+    <set>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="accessDate != null">
+        access_date = #{accessDate,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        apply_no = #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="policyNo != null">
+        policy_no = #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="effectiveDate != null">
+        effective_date = #{effectiveDate,jdbcType=VARCHAR},
+      </if>
+      <if test="termDate != null">
+        term_date = #{termDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orderState != null">
+        order_state = #{orderState,jdbcType=VARCHAR},
+      </if>
+      <if test="isNotice != null">
+        is_notice = #{isNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyCode != null">
+        agency_code = #{agencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="outeragentCode != null">
+        outeragent_code = #{outeragentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyHand != null">
+        agency_hand = #{agencyHand,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null">
+        agent_code = #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organId != null">
+        organ_id = #{organId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null">
+        product_code = #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="initialPremium != null">
+        initial_premium = #{initialPremium,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPremium != null">
+        total_premium = #{totalPremium,jdbcType=DECIMAL},
+      </if>
+      <if test="firstPaymentPeriod != null">
+        first_payment_period = #{firstPaymentPeriod,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueType != null">
+        overdue_type = #{overdueType,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryMode != null">
+        delivery_mode = #{deliveryMode,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRenewal != null">
+        auto_renewal = #{autoRenewal,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneVisit != null">
+        phone_visit = #{phoneVisit,jdbcType=VARCHAR},
+      </if>
+      <if test="isUnderwrite != null">
+        is_underwrite = #{isUnderwrite,jdbcType=VARCHAR},
+      </if>
+      <if test="uwCause != null">
+        uw_cause = #{uwCause,jdbcType=VARCHAR},
+      </if>
+      <if test="uwMemo != null">
+        uw_memo = #{uwMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="manualCause != null">
+        manual_cause = #{manualCause,jdbcType=VARCHAR},
+      </if>
+      <if test="mult != null">
+        mult = #{mult,jdbcType=INTEGER},
+      </if>
+      <if test="insuWay != null">
+        insu_way = #{insuWay,jdbcType=VARCHAR},
+      </if>
+      <if test="policyTerm != null">
+        policy_term = #{policyTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="premiumTerm != null">
+        premium_term = #{premiumTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="payintv != null">
+        payintv = #{payintv,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        insert_time = #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="policyTermUtil != null">
+        policy_term_util = #{policyTermUtil,jdbcType=VARCHAR},
+      </if>
+      <if test="faceamount != null">
+        faceamount = #{faceamount,jdbcType=VARCHAR},
+      </if>
+      <if test="issueDate != null">
+        issue_date = #{issueDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proposalNo != null">
+        proposal_no = #{proposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isSuccess != null">
+        is_success = #{isSuccess,jdbcType=VARCHAR},
+      </if>
+      <if test="issuedInfo != null">
+        issued_info = #{issuedInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="policyUrl != null">
+        policy_url = #{policyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        sign_date = #{signDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isVerify != null">
+        is_verify = #{isVerify,jdbcType=INTEGER},
+      </if>
+      <if test="isAccess != null">
+        is_access = #{isAccess,jdbcType=INTEGER},
+      </if>
+      <if test="isPrint != null">
+        is_print = #{isPrint,jdbcType=INTEGER},
+      </if>
+    </set>
+    where policy_id = #{policyId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.access.domain.Policy">
+    update syb_policy
+    set order_no = #{orderNo,jdbcType=VARCHAR},
+      access_date = #{accessDate,jdbcType=VARCHAR},
+      apply_no = #{applyNo,jdbcType=VARCHAR},
+      policy_no = #{policyNo,jdbcType=VARCHAR},
+      effective_date = #{effectiveDate,jdbcType=VARCHAR},
+      term_date = #{termDate,jdbcType=VARCHAR},
+      order_state = #{orderState,jdbcType=VARCHAR},
+      is_notice = #{isNotice,jdbcType=VARCHAR},
+      agency_code = #{agencyCode,jdbcType=VARCHAR},
+      outeragent_code = #{outeragentCode,jdbcType=VARCHAR},
+      agency_hand = #{agencyHand,jdbcType=VARCHAR},
+      agent_code = #{agentCode,jdbcType=VARCHAR},
+      organ_id = #{organId,jdbcType=VARCHAR},
+      product_code = #{productCode,jdbcType=VARCHAR},
+      initial_premium = #{initialPremium,jdbcType=DECIMAL},
+      total_premium = #{totalPremium,jdbcType=DECIMAL},
+      first_payment_period = #{firstPaymentPeriod,jdbcType=DECIMAL},
+      overdue_type = #{overdueType,jdbcType=VARCHAR},
+      delivery_mode = #{deliveryMode,jdbcType=VARCHAR},
+      auto_renewal = #{autoRenewal,jdbcType=VARCHAR},
+      phone_visit = #{phoneVisit,jdbcType=VARCHAR},
+      is_underwrite = #{isUnderwrite,jdbcType=VARCHAR},
+      uw_cause = #{uwCause,jdbcType=VARCHAR},
+      uw_memo = #{uwMemo,jdbcType=VARCHAR},
+      manual_cause = #{manualCause,jdbcType=VARCHAR},
+      mult = #{mult,jdbcType=INTEGER},
+      insu_way = #{insuWay,jdbcType=VARCHAR},
+      policy_term = #{policyTerm,jdbcType=VARCHAR},
+      premium_term = #{premiumTerm,jdbcType=VARCHAR},
+      payintv = #{payintv,jdbcType=VARCHAR},
+      insert_time = #{insertTime,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      policy_term_util = #{policyTermUtil,jdbcType=VARCHAR},
+      faceamount = #{faceamount,jdbcType=VARCHAR},
+      issue_date = #{issueDate,jdbcType=VARCHAR},
+      proposal_no = #{proposalNo,jdbcType=VARCHAR},
+      is_success = #{isSuccess,jdbcType=VARCHAR},
+      issued_info = #{issuedInfo,jdbcType=VARCHAR},
+      policy_url = #{policyUrl,jdbcType=VARCHAR},
+      sign_date = #{signDate,jdbcType=VARCHAR},
+      is_verify = #{isVerify,jdbcType=INTEGER},
+      is_access = #{isAccess,jdbcType=INTEGER},
+      is_print = #{isPrint,jdbcType=INTEGER}
+    where policy_id = #{policyId,jdbcType=VARCHAR}
+  </update>
+</mapper>

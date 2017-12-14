@@ -1,0 +1,23 @@
+#应用id
+WX_APP_ID: wxdcc8db2301491b19
+#应用密钥
+WX_APP_SECRET: b5a29459257e50573aebf08c81e4ae18
+#商户id
+WX_MCH_ID: 1376601502
+#商户密钥
+partnerkey: b5a29459257e50573aebf08c81e4ae19
+#网关
+sitePath: http://wx.xiaobeidai.com/
+#环境
+env: test
+#openid路径
+WX_REDIRECT_URI: wxcommon/openid.hsml
+#通知路径
+WX_NOTIFY_URL: wxpay/notify.hsml
+#支付类型
+WX_TRADE_TYPE: JSAPI
+WX_API_KEY: ABCDEFG123HIJKLMNK
+WX_FEE_TYPE: CNY
+
+ALI_CHARSET: UTF-8
+ALI_NOTIFY_URL: http://wx.xiaobeidai.com/proxypays/alipay/notify.hsml

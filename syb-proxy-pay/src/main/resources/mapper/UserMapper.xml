@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.pay.mapper.UserMapper">
+
+	<resultMap id="BaseResultMap" type="com.shenpu.proxy.pay.domain.User">
+		<id column="user_id" property="userId" jdbcType="VARCHAR" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="selectById" resultMap="BaseResultMap">
+		select * from user where id = #{id}
+	</select>
+
+	<select id="list" resultMap="BaseResultMap">
+		select * from user
+	</select>
+
+</mapper>

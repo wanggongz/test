@@ -1,0 +1,64 @@
+#spring配置    
+spring:
+  zipkin:
+    base-url: http://localhost:9411
+#  boot:
+#    admin:
+#      url: http://localhost:9210
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000    #为了测试fallback,设置超时1毫秒。  
+ribbon:
+  ReadTimeout: 60000            #读取超时时间
+  ConnectTimeout: 60000         #连接超时时间
+  MaxAutoRetries: 1             #最大重试次数（同一个服务）
+  MaxAutoRetriesNextServer: 1   #自动重试其他服务次数
+  OkToRetryOnAllOperations: true
+  eureka:
+    enabled: true
+
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false     
+    
+      
+#日志：默认logback,建议使用文件名称logback-spring.xml
+#file和path都配置时，只有file生效。
+logging:
+#  file: spring.log
+  path: /Users/wang_sheng/log/
+  config: classpath:logback-spring.xml
+  level:
+    com:
+      shenpu: info
+
+#注册中心
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  healthcheck:
+    enabled: true
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 90
+    preferIpAddress: true                     #使用ip注册而非应用名称
+    hostname: peer${random.int[1,5]}
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}} 
+    metadata-map:  
+      cluster: MAIN
+
+  

@@ -1,0 +1,135 @@
+package com.shenpu.base.utils;
+
+
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.util.Collection;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.namespace.QName;
+
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * xml工具类
+ * 
+ * @author Jetty
+ */
+public class JaxbUtil {
+	private JAXBContext jaxbContext;
+
+	@SuppressWarnings("unused")
+	private JaxbUtil(){}
+	
+	/**
+	 * @param types
+	 *            所有需要序列化的Root对象的类型.
+	 */
+	public JaxbUtil(Class<?>... types) {
+		try {
+			jaxbContext = JAXBContext.newInstance(types);
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * Java Object->Xml.
+	 */
+	public String toXml(Object root, String encoding) {
+		try {
+			StringWriter writer = new StringWriter();
+			createMarshaller(encoding).marshal(root, writer);
+			return writer.toString().replaceAll("standalone=\"yes\"", "");
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * Java Object->Xml, 特别支持对Root Element是Collection的情形.
+	 */
+	public String toXml(@SuppressWarnings("rawtypes") Collection root, String rootName, String encoding) {
+		try {
+			CollectionWrapper wrapper = new CollectionWrapper();
+			wrapper.collection = root;
+			JAXBElement<CollectionWrapper> wrapperElement = new JAXBElement<CollectionWrapper>(new QName(rootName),
+					CollectionWrapper.class, wrapper);
+			StringWriter writer = new StringWriter();
+			createMarshaller(encoding).marshal(wrapperElement, writer);
+			return writer.toString();
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * Xml->Java Object.
+	 */
+	@SuppressWarnings("unchecked")
+	public <T> T fromXml(String xml) {
+		try {
+			StringReader reader = new StringReader(xml);
+			return (T) createUnmarshaller().unmarshal(reader);
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * Xml->Java Object, 支持大小写敏感或不敏感.
+	 */
+	@SuppressWarnings("unchecked")
+	public <T> T fromXml(String xml, boolean caseSensitive) {
+		try {
+			String fromXml = xml;
+			if (!caseSensitive)
+				fromXml = xml.toLowerCase();
+			StringReader reader = new StringReader(fromXml);
+			return (T) createUnmarshaller().unmarshal(reader);
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 创建Marshaller, 设定encoding(可为Null).
+	 */
+	public Marshaller createMarshaller(String encoding) {
+		try {
+			Marshaller marshaller = jaxbContext.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.FALSE);
+			if (StringUtils.isNotBlank(encoding)) {
+				marshaller.setProperty(Marshaller.JAXB_ENCODING, encoding);
+			}
+			return marshaller;
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 创建UnMarshaller.
+	 */
+	public Unmarshaller createUnmarshaller() {
+		try {
+			return jaxbContext.createUnmarshaller();
+		} catch (JAXBException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 封装Root Element 是 Collection的情况.
+	 */
+	public static class CollectionWrapper {
+		@SuppressWarnings("rawtypes")
+		@XmlAnyElement
+		protected Collection collection;
+	}
+}

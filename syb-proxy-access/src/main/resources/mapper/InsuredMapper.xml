@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.access.mapper.InsuredMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.access.domain.Insured">
+    <result column="insured_id" jdbcType="VARCHAR" property="insuredId" />
+    <result column="policy_no" jdbcType="VARCHAR" property="policyNo" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="insured_grade" jdbcType="VARCHAR" property="insuredGrade" />
+    <result column="insured_name" jdbcType="VARCHAR" property="insuredName" />
+    <result column="sex" jdbcType="CHAR" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="id_type" jdbcType="VARCHAR" property="idType" />
+    <result column="id_no" jdbcType="VARCHAR" property="idNo" />
+    <result column="occupation" jdbcType="VARCHAR" property="occupation" />
+    <result column="occupation_name" jdbcType="VARCHAR" property="occupationName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="nationality" jdbcType="VARCHAR" property="nationality" />
+    <result column="nativeplace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="prov_id" jdbcType="VARCHAR" property="provId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="county_id" jdbcType="VARCHAR" property="countyId" />
+    <result column="map_coordinates" jdbcType="VARCHAR" property="mapCoordinates" />
+    <result column="marriage" jdbcType="CHAR" property="marriage" />
+    <result column="insured_relation" jdbcType="VARCHAR" property="insuredRelation" />
+    <result column="year_incom" jdbcType="VARCHAR" property="yearIncom" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="insured_type" jdbcType="VARCHAR" property="insuredType" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="premium" jdbcType="VARCHAR" property="premium" />
+    <result column="sumPremium" jdbcType="BIGINT" property="sum_premium" />
+  </resultMap>
+  <insert id="insert" parameterType="com.shenpu.proxy.access.domain.Insured">
+    insert into syb_insured (insured_id, policy_no, order_no, 
+      apply_no, insured_grade, insured_name, 
+      sex, age, birthday, id_type, 
+      id_no, occupation, occupation_name, 
+      mobile, email, zip_code, 
+      nationality, nativeplace, prov_id, 
+      city_id, county_id, map_coordinates, 
+      marriage, insured_relation, year_incom, 
+      height, weight, status, 
+      insert_time, update_time, insured_type, 
+      address, premium)
+    values (#{insuredId,jdbcType=VARCHAR}, #{policyNo,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, 
+      #{applyNo,jdbcType=VARCHAR}, #{insuredGrade,jdbcType=VARCHAR}, #{insuredName,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=CHAR}, #{age,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, #{idType,jdbcType=VARCHAR}, 
+      #{idNo,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{occupationName,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, 
+      #{nationality,jdbcType=VARCHAR}, #{nativeplace,jdbcType=VARCHAR}, #{provId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{countyId,jdbcType=VARCHAR}, #{mapCoordinates,jdbcType=VARCHAR}, 
+      #{marriage,jdbcType=CHAR}, #{insuredRelation,jdbcType=VARCHAR}, #{yearIncom,jdbcType=VARCHAR}, 
+      #{height,jdbcType=VARCHAR}, #{weight,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{insertTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, #{insuredType,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{premium,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.access.domain.Insured">
+    insert into syb_insured
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insuredId != null">
+        insured_id,
+      </if>
+      <if test="policyNo != null">
+        policy_no,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="insuredGrade != null">
+        insured_grade,
+      </if>
+      <if test="insuredName != null">
+        insured_name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idType != null">
+        id_type,
+      </if>
+      <if test="idNo != null">
+        id_no,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="occupationName != null">
+        occupation_name,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="zipCode != null">
+        zip_code,
+      </if>
+      <if test="nationality != null">
+        nationality,
+      </if>
+      <if test="nativeplace != null">
+        nativeplace,
+      </if>
+      <if test="provId != null">
+        prov_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="countyId != null">
+        county_id,
+      </if>
+      <if test="mapCoordinates != null">
+        map_coordinates,
+      </if>
+      <if test="marriage != null">
+        marriage,
+      </if>
+      <if test="insuredRelation != null">
+        insured_relation,
+      </if>
+      <if test="yearIncom != null">
+        year_incom,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="insuredType != null">
+        insured_type,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="premium != null">
+        premium,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insuredId != null">
+        #{insuredId,jdbcType=VARCHAR},
+      </if>
+      <if test="policyNo != null">
+        #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredGrade != null">
+        #{insuredGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredName != null">
+        #{insuredName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        #{idType,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationName != null">
+        #{occupationName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nationality != null">
+        #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="provId != null">
+        #{provId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null">
+        #{countyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mapCoordinates != null">
+        #{mapCoordinates,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null">
+        #{marriage,jdbcType=CHAR},
+      </if>
+      <if test="insuredRelation != null">
+        #{insuredRelation,jdbcType=VARCHAR},
+      </if>
+      <if test="yearIncom != null">
+        #{yearIncom,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredType != null">
+        #{insuredType,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="premium != null">
+        #{premium,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <!-- 计算总保费 -->
+  <select id="selectSumPremiumByApplyNo" parameterType="String" resultType="Long">
+  		select SUM(CAST(t.premium AS SIGNED)) as sum_premium from syb_insured 
+  			t where t.apply_no = #{applyNo,jdbcType=VARCHAR}
+  </select>
+</mapper>

@@ -1,0 +1,24 @@
+#spring:
+#  cloud:
+#    config:
+#      uri: http://config:8888
+ 
+ #config服务发现支持
+spring:
+  application:
+    name: zuul-server
+  cloud: 
+    config: 
+      discovery:
+        enabled: true
+        serviceId: config-server              #指定server端的name,也就是server端spring.application.name的值
+      name: config
+      profile: zuul-server-dev,common
+
+encrypt:
+  failOnError: false
+
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://ws:123@localhost:8761/eureka/  

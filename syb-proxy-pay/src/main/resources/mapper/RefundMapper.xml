@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.pay.mapper.RefundMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.pay.domain.Refund">
+    <result column="refund_id" jdbcType="VARCHAR" property="refundId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="refund_money" jdbcType="VARCHAR" property="refundMoney" />
+    <result column="req_msg" jdbcType="VARCHAR" property="reqMsg" />
+    <result column="rsp_msg" jdbcType="VARCHAR" property="rspMsg" />
+    <result column="refund_state" jdbcType="BIT" property="refundState" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    refund_id, order_no, apply_no, refund_money, req_msg, rsp_msg, refund_state
+  </sql>
+  <select id="selectById" parameterType="String" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from syb_refund
+    where refund_id=#{refundId}
+  </select>
+  
+  <insert id="insert" parameterType="com.shenpu.proxy.pay.domain.Refund">
+    insert into syb_refund (refund_id, order_no, apply_no, 
+      refund_money, req_msg, rsp_msg, 
+      refund_state)
+    values (#{refundId,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, #{applyNo,jdbcType=VARCHAR}, 
+      #{refundMoney,jdbcType=VARCHAR}, #{reqMsg,jdbcType=VARCHAR}, #{rspMsg,jdbcType=VARCHAR}, 
+      #{refundState,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.pay.domain.Refund">
+    insert into syb_refund
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="refundId != null">
+        refund_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="refundMoney != null">
+        refund_money,
+      </if>
+      <if test="reqMsg != null">
+        req_msg,
+      </if>
+      <if test="rspMsg != null">
+        rsp_msg,
+      </if>
+      <if test="refundState != null">
+        refund_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="refundId != null">
+        #{refundId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="refundMoney != null">
+        #{refundMoney,jdbcType=VARCHAR},
+      </if>
+      <if test="reqMsg != null">
+        #{reqMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="rspMsg != null">
+        #{rspMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="refundState != null">
+        #{refundState,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  
+</mapper>

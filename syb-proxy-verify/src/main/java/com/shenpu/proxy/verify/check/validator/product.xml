@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="gbk"?>
+<insurList>
+	<!--利益计算利率 -->
+	<interestRate>0.035</interestRate>
+	<bonusInterestRate>0.03</bonusInterestRate>
+	<type id="11" name="寿险" selected="true">
+	</type>
+	<type id="12" name="重疾" selected="true">
+		<insur id="I118" />
+		<insur id="I121" />
+		<insur id="C128" />
+		<insur id="I122" />
+		<insur id="C108" />
+		<insur id="I106" />
+	</type>
+	<type id="13" name="意外" selected="true">
+	</type>
+	<type id="14" name="年金" selected="true">
+	</type>
+	<type id="15" name="医疗" selected="true">
+		<insur id="CC128" />
+		<insur id="I123" />
+	</type>
+
+	<insurs>
+		<!--id-险种代码、name-险种名称、kind-险种类型(主险、附加险、险种组合)、beginDate-启售日期（默认不受限）、endDate-停售日期(默认不受限)、channel-销售渠道(默认所有渠道)、organs-可销售机构(默认所有机构)、isSell-是否可销售(默认可销售) 
+			mustProposal-是否必须制作建议书（默认是）showMultInclude-是否显示险种组合下的险种信息，默认否 template- 生成pdf模版 
+			主险属性 liability="exempt" 险种责任(豁免责任) hasBnf-是否有受益人，默认有，hasProductSpec-是否有产品说明书，默认有 -->
+		<insur id="I121" name="金祥宁终身重大疾病保险" kind="main" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="最低保险金额为2万元">
+					<test><![CDATA[${nAmount} < 20000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为5类时，累计疾病保险金额不得高于300000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 300000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计疾病保险金额不得高于200000">
+					<test><![CDATA["6".equals(${occupationType})&&${nAmount} > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为4类时，累计疾病保险金额不得高于1000000">
+					<test><![CDATA["4".equals(${occupationType})&&${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为3类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["3".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为2类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["2".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为1类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["1".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+			</rule>
+			<rule id="checkMaxAmount">
+				<if id="if" msg="本险种的最高保险金额为100万元">
+					<test><![CDATA[Double.parseDouble(${amount}) > 1000000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="被保人职业类别为99类时，不得投保本险种">
+					<test><![CDATA["拒保".equals(${occupationType})]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="I122" name="糖尿病人群终身疾病保险(A款)" kind="main"
+			hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="被保险人限30周岁至70周岁之间">
+					<test><![CDATA[${getAge} < 30 || ${getAge} > 70]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保额应为10000元的整数倍">
+					<test><![CDATA[${nAmount} % 10000 != 0]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为5类时，累计疾病保险金额不得高于300000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 300000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计疾病保险金额不得高于200000">
+					<test><![CDATA["6".equals(${occupationType})&&${nAmount} > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为4类时，累计疾病保险金额不得高于1000000">
+					<test><![CDATA["4".equals(${occupationType})&&${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为3类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["3".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为2类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["2".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为1类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["1".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="被保人职业类别为99类时，不得投保本险种">
+					<test><![CDATA["拒保".equals(${occupationType})]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="I118" name="康顺定期癌症疾病保险" kind="main" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="保险金额：最低100000元">
+					<test><![CDATA[${nAmount} < 100000]]></test>
+				</if>
+				<if id="if" msg="18岁以下未成年人，累计最高保额为50万元">
+					<test><![CDATA[${getAge} < 18 && ${nAmount} >500000]]></test>
+				</if>
+				<if id="if" msg="保险金额不得超过150万元">
+					<test><![CDATA[${nAmount} > 1500000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为5类时，累计疾病保险金额不得高于300000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 300000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计疾病保险金额不得高于200000">
+					<test><![CDATA["6".equals(${occupationType})&&${nAmount} > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为4类时，累计疾病保险金额不得高于1000000">
+					<test><![CDATA["4".equals(${occupationType})&&${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为3类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["3".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为2类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["2".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为1类时，累计疾病保险金额不得高于2000000">
+					<test><![CDATA["1".equals(${occupationType})&&${nAmount} > 2000000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="被保人职业类别为99类时，不得投保本险种">
+					<test><![CDATA["拒保".equals(${occupationType})]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="A128" name="附加长寿宝长期意外伤害保险" kind="add"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+
+
+		</insur>
+		<insur id="C135" name="附加长寿宝长期护理保险（万能型）" kind="add"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="保费：最低1000元">
+					<test><![CDATA[Double.parseDouble(${prem}) < 1000&&Double.parseDouble(${prem})!=0]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保费应为100元的整数倍">
+					<test><![CDATA[Double.parseDouble(${prem})% 100 != 0]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="C128" name="长寿宝长期护理保险" kind="main" showMultInclude="true"
+			hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="最低保险金额为1万元">
+					<test><![CDATA[${nAmount} < 10000]]></test>
+				</if>
+				<if id="if" msg="保额应为10000元的整数倍">
+					<test><![CDATA[${nAmount} % 10000 != 0]]></test>
+				</if>
+				<if id="if" msg="投保本险种最低保险费限为2000元">
+					<test><![CDATA[Double.parseDouble(${prem}) < 2000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为5类时，累计护理保险金额不得高于300000">
+					<test><![CDATA["5".equals(${occupationType})&& (${nAmount}+Double.parseDouble(${getAmountProductCode}("A135"))) > 300000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计护理保险金额不得高于200000">
+					<test><![CDATA["6".equals(${occupationType})&&(${nAmount}+Double.parseDouble(${getAmountProductCode}("A135"))) > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为4类时，累计护理保险金额不得高于1000000">
+					<test><![CDATA["4".equals(${occupationType})&&(${nAmount}+Double.parseDouble(${getAmountProductCode}("A135"))) > 1000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为3类时，累计护理保险金额不得高于2000000">
+					<test><![CDATA["3".equals(${occupationType})&&(${nAmount}+Double.parseDouble(${getAmountProductCode}("A135")))> 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为2类时，累计护理保险金额不得高于2000000">
+					<test><![CDATA["2".equals(${occupationType})&&(${nAmount}+Double.parseDouble(${getAmountProductCode}("A135"))) > 2000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为1类时，累计护理保险金额不得高于2000000">
+					<test><![CDATA["1".equals(${occupationType})&&(${nAmount}+Double.parseDouble(${getAmountProductCode}("A135")))> 2000000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="被保人职业类别为99类时，不得投保本险种">
+					<test><![CDATA["拒保".equals(${occupationType})]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="M114" name="附加住院津贴医疗保险" kind="add" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-60周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 60]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保额应为10元的整数倍">
+					<test><![CDATA[${nAmount} % 10 != 0]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="保险金额：最低50元最高200元">
+					<test><![CDATA[${nAmount} < 50 || ${nAmount} > 200]]></test>
+				</if>
+
+				<!--<if id="if" msg="主险保费必须大于50000"> <test><![CDATA[${nAmount} == 200 
+					&& Double.parseDouble(${parentPrem})< 50000]]></test> </if> -->
+				<if id="if" msg="趸交主险保费不得低于50000元">
+					<test><![CDATA[${nAmount} == 200 && "0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 50000]]></test>
+				</if>
+				<if id="if" msg="期交主险保费不得低于5000元">
+					<test><![CDATA[${nAmount} == 200 && !"0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 5000]]></test>
+				</if>
+				<!--<if id="if" msg="主险保费必须大于30000"> <test><![CDATA[${nAmount} == 150 
+					&& Double.parseDouble(${parentPrem})< 30000]]></test> </if> -->
+				<if id="if" msg="趸交主险保费不得低于30000元">
+					<test><![CDATA[${nAmount} > 149 && ${nAmount} < 200 && "0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 30000]]></test>
+				</if>
+				<if id="if" msg="期交主险保费不得低于3000元">
+					<test><![CDATA[${nAmount} > 149 && ${nAmount} < 200 && !"0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 3000]]></test>
+				</if>
+				<!--<if id="if" msg="主险保费必须大于20000"> <test><![CDATA[${nAmount} == 100 
+					&& Double.parseDouble(${parentPrem})< 20000]]></test> </if> -->
+				<if id="if" msg="趸交主险保费不得低于20000元">
+					<test><![CDATA[${nAmount} > 99 && ${nAmount} < 150 &&"0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 20000]]></test>
+				</if>
+				<if id="if" msg="期交主险保费不得低于2000元">
+					<test><![CDATA[${nAmount} > 99 && ${nAmount} < 150 && !"0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 2000]]></test>
+				</if>
+				<!--<if id="if" msg="主险保费必须大于10000"> <test><![CDATA[${nAmount} == 50 
+					&& Double.parseDouble(${parentPrem})< 10000]]></test> </if> -->
+				<if id="if" msg="趸交主险保费不得低于10000元">
+					<test><![CDATA[${nAmount} > 49 && ${nAmount} < 100 && "0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 10000]]></test>
+				</if>
+				<if id="if" msg="期交主险保费不得低于1000元">
+					<test><![CDATA[${nAmount} > 49 && ${nAmount} < 100 && !"0".equals(${parentPayIntv}) && Double.parseDouble(${parentPrem})< 1000]]></test>
+				</if>
+				<if id="if" msg="年龄小于3岁（含）的未成年人，累计限投保住院日额保险金额50元">
+					<test><![CDATA[${getAge}<= 3 && ${nAmount} > 50]]></test>
+				</if>
+				<if id="if" msg="年龄超过55周岁（含）的被保险人，累计限投保住院日额保险金额100元">
+					<test><![CDATA[${getAge}>= 55 && ${nAmount} > 100]]></test>
+				</if>
+				<if id="if" msg="学龄前儿童、离职人员（无兼职）、待业人员、家庭主妇累计限投保住院日额保险金额100元">
+					<test><![CDATA["0801".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="军警人员累计限投保住院日额保险金额100元">
+					<test><![CDATA["0701".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="军警人员累计限投保住院日额保险金额100元">
+					<test><![CDATA["0601".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="军警人员累计限投保住院日额保险金额100元">
+					<test><![CDATA["0602".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="务农人员累计限投保住院日额保险金额100元">
+					<test><![CDATA["0201".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="医务人员及医疗系统从业人员累计限投保住院日额保险金额100元">
+					<test><![CDATA["0105".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="学生累计限投保住院日额保险金额100元">
+					<test><![CDATA["0103".equals(${occupationTypeCode})  &&  ${nAmount}> 100]]></test>
+				</if>
+				<if id="if" msg="4类职业累计限投保住院日额保险金额100元">
+					<test><![CDATA["4".equals(${occupationType}) &&  ${nAmount}> 100]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="职业类别为5类或6类时，不得投保本险种">
+					<test><![CDATA["5".equals(${occupationType}) || "6".equals(${occupationType}) ]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="M115" name="附加住院医疗保险" kind="add" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-60周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 60]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0801".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0701".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0601".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0602".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0201".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0103".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["0105".equals(${occupationTypeCode})  &&  ${nAmount}> 10000]]></test>
+				</if>
+				<if id="if"
+					msg="家庭主妇、无业人员、离退休人员、务农人员、学生及学龄前儿童、医务人员及医疗系统从业人员、职业类别4类及军警人员最高保险金额不得超过10000元">
+					<test><![CDATA["4".equals(${occupationType}) &&  ${nAmount} > 10000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="职业类别为5类或6类时，不得投保本险种">
+					<test><![CDATA["5".equals(${occupationType}) || "6".equals(${occupationType}) ]]></test>
+				</if>
+			</rule>
+
+		</insur>
+		<insur id="A158" name="附加意外伤害保险" kind="add" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-60周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 60]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="保险金额：最低50000元">
+					<test><![CDATA[${nAmount} < 50000]]></test>
+				</if>
+			</rule>
+			<rule id="checkMaxAmount">
+				<if id="if" msg="保险金额不得超过100万元">
+					<test><![CDATA[${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为5类时，累计意外保险金额不得高于200000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计意外保险金额不得高于100000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 100000]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保额应为10000元的整数倍">
+					<test><![CDATA[${nAmount} % 10000 != 0]]></test>
+				</if>
+			</rule>
+		</insur>
+
+		<insur id="M116" name="附加意外伤害医疗保险" kind="add" hasProductSpec="false"
+			beginDate="2014-01-01">
+			<rule id="checkMinAmount">
+				<if id="if" msg="保险金额：最低10000元">
+					<test><![CDATA[${nAmount} < 10000]]></test>
+				</if>
+				<if id="if" msg="保额应为1000元的整数倍">
+					<test><![CDATA[${nAmount} % 1000 != 0]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="被保人职业类别为5类时，累计意外保险金额不得高于200000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 200000]]></test>
+				</if>
+				<if id="if" msg="被保人职业类别为6类时，累计意外保险金额不得高于100000">
+					<test><![CDATA["5".equals(${occupationType})&&${nAmount} > 100000]]></test>
+				</if>
+			</rule>
+			<rule id="check116">
+				<if id="if" msg="本险种保险金额应为附加意外伤害期保险额五分之一，如没有添加158附加意外伤害期保险,请添加 ">
+					<test><![CDATA[Double.parseDouble(${getAmountProductCode}("A158"))/5	< ${nAmount} ]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="CC128" name="长寿宝长期护理保险" kind="main" showMultInclude="true"
+			hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保费应为1000元的整数倍">
+					<test><![CDATA[Double.parseDouble(${sumPrem}) % 1000!=0]]></test>
+				</if>
+				<if id="if" msg="投保本险种最低保险费限为2000元">
+					<test><![CDATA[Double.parseDouble(${sumPrem}) < 2000]]></test>
+				</if>
+			</rule>
+			<rule id="checkSpecialJobs">
+				<if id="if" msg="被保人职业类别为99类时，不得投保本险种">
+					<test><![CDATA["拒保".equals(${occupationType})]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="AA128" name="附加长寿宝长期意外伤害保险" kind="add"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="C124" name="附加长寿宝长期护理保险（万能型）" kind="add"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="保费最低1000元">
+					<test><![CDATA[Double.parseDouble(${prem}) < 1000&&Double.parseDouble(${prem})!=0]]></test>
+				</if>
+			</rule>
+			<rule id="checkBasePrem">
+				<if id="if" msg="保费应为100元的整数倍">
+					<test><![CDATA[Double.parseDouble(${prem})% 100 != 0]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="C108" name="健康360长期护理保险（A款）" kind="main"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="出生满30天-55周岁（包含30天和55周岁）">
+					<test><![CDATA[${getAgeByDay} < 30 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="被保人大于18岁时，最低投保3份">
+					<test><![CDATA[${getAge} >= 18 && Integer.parseInt(${sumPrem})< 3]]></test>
+				</if>
+			</rule>
+			<rule id="checkMulti">
+				<if id="if" msg="本险种必须投保整数份">
+					<test><![CDATA[Double.parseDouble(${sumPrem}) %1 !=0]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="I112" name="附加健康360定期重大疾病保险（A款）" kind="add"
+			showMultInclude="true" hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="出生满30天-55周岁（包含30天和55周岁）">
+					<test><![CDATA[${getAgeByDay} < 30 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="I106" name="健康宝肝疾病保险" kind="main" showMultInclude="true"
+			hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：16岁至65周岁（包含16岁和65周岁）">
+					<test><![CDATA[${getAge} < 16 || ${getAge} > 65]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="本险种最低保额5万元、最高保额100万">
+					<test><![CDATA[${nAmount} < 50000||${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="保额应为1000元的整数倍">
+					<test><![CDATA[${nAmount} % 1000 != 0]]></test>
+				</if>
+			</rule>
+		</insur>
+		<insur id="I123" name="健康宝终身重大疾病保险" kind="main" showMultInclude="true"
+			hasProductSpec="false" beginDate="2014-01-01">
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄：28天-55周岁">
+					<test><![CDATA[${getAgeByDay} < 28 || ${getAge} > 55]]></test>
+				</if>
+			</rule>
+			<rule id="checkMinAmount">
+				<if id="if" msg="本险种最低保额5万元、最高保额100万">
+					<test><![CDATA[${nAmount} < 20000||${nAmount} > 1000000]]></test>
+				</if>
+				<if id="if" msg="保额应为1000元的整数倍">
+					<test><![CDATA[${nAmount} % 1000 != 0]]></test>
+				</if>
+			</rule>
+		</insur>
+	</insurs>
+	<attribute id="mainCheckList" name="主险检查列表">
+		<item id="checkAppntAge" name="检查投保人年龄" />
+		<item id="checkInsurantAge" name="检查被保人年龄" />
+		<item id="checkInsurantSex" name="检查被保人性别" />
+		<item id="checkIsSamePeople" name="检查投保人、被保人是否是同一人" />
+		<item id="checkSpecialJobs" name="检查职业" />
+		<item id="checkInsureSingle" name="检查同一个建议书中不能存在相同险种" />
+		<item id="checkSingleMain" name="检查相同建议书同不能存在多个主险" />
+		<item id="checkLiability" name="检查责任" />
+	</attribute>
+	<attribute id="addCheckList" name="附险检查列表">
+		<item id="checkAppntAge" name="检查投保人年龄" />
+		<item id="checkInsurantAge" name="检查被保人年龄" />
+		<item id="checkInsurantSex" name="检查被保人性别" />
+		<item id="checkIsSamePeople" name="检查投保人、被保人是否是同一人" />
+		<item id="checkParentIsSamePeople" name="主险的投保人与被保人不能相同" />
+		<item id="checkSpecialJobs" name="检查职业" />
+		<item id="checkInsureSingle" name="检查同一个建议书中不能存在相同险种" />
+		<item id="checkParentPayIntv" name="检查主险缴费方式" />
+		<item id="checkParentInsuYears" name="检查主险的保障期间" />
+		<item id="checkLiability" name="检查责任" />
+		<item id="checkMulti" name="检查责任" />
+	</attribute>
+	<attribute id="serviceVariableList" name="变量定义">
+		<item id="getAgeByDay" name="获取险种被保人年龄(以天为单位)">insuranceBO.getInsurantBO().getAgeByDay()
+		</item>
+		<item id="getAge" name="获取险种被保人年龄(周岁)">insuranceBO.getInsurantBO().getAge()
+		</item>
+		<item id="getAppntAge" name="获取险种被保人年龄(周岁)">insuranceBO.getProposalBO().getApplicantBO().getAge()
+		</item>
+		<item id="inPayIntv" name="缴费方式是否为某缴费方式">insuranceBO.inPayIntv</item>
+		<item id="hasMain" name="只能添加一个主险">insuranceBO.getProposalBO().hasMain()
+		</item>
+		<item id="hasSameInsurance" name="同一个险种只能购买一次">insuranceBO.getProposalBO().hasInsurance(insuranceBO.getProduct().getId())
+		</item>
+		<item id="hasLiability" name="检查险种责任">insuranceBO.getProposalBO().hasLiability
+		</item>
+		<item id="prem" name="获取险种保费">insuranceBO.getInsurance().getPrem()</item>
+		<item id="jobAddFee" name="获取险种保费">insuranceBO.getInsurance().getJobAddFee()
+		</item>
+		<item id="amount" name="获取险种保额">insuranceBO.getInsurance().getAmount()
+		</item>
+
+		<item id="premWithJob" name="获取险种保费">insuranceBO.getInsurance().getPremWithJob()
+		</item>
+		<item id="jobAddFeeWithJob" name="获取险种保费">insuranceBO.getInsurance().getJobAddFeeWithJob()
+		</item>
+		<item id="amountWithJob" name="获取险种保额">insuranceBO.getInsurance().getAmountWithJob()
+		</item>
+
+		<item id="getAmountProductCode" name="获取建议书中某指定险种的年交保额">insuranceBO.getProposalBO().getAmountProductCode
+		</item>
+		<item id="multi" name="获取险种份数或档次">insuranceBO.getInsurance().getMulti()
+		</item>
+		<item id="nAmount" name="获取险种保额（数字型）">Double.parseDouble(insuranceBO.getInsurance().getAmount())
+		</item>
+		<item id="nMulti" name="获取险种份数或档次（数字型）">Integer.parseInt(insuranceBO.getInsurance().getMulti())
+		</item>
+		<item id="nPrem" name="获取险种保费(数字型)">Double.parseDouble(insuranceBO.getInsurance().getPrem())
+		</item>
+		<item id="nJobAddFee" name="获取险种保费">
+			<![CDATA[((insuranceBO.getInsurance().getJobAddFee()== null && insuranceBO.getInsurance().getJobAddFee().equals(""))?0:Double.parseDouble(insuranceBO.getInsurance().getJobAddFee()))
+			]]>
+		</item>
+
+		<item id="nAmountWithJob" name="获取险种保额（数字型）">Double.parseDouble(insuranceBO.getInsurance().getAmountWithJob())
+		</item>
+		<item id="nPremWithJob" name="获取险种保费(数字型)">Double.parseDouble(insuranceBO.getInsurance().getPremWithJob())
+		</item>
+		<item id="nJobAddFeeWithJob" name="获取险种保费">
+			<![CDATA[((insuranceBO.getInsurance().getJobAddFeeWithJob()== null && insuranceBO.getInsurance().getJobAddFeeWithJob().equals(""))?0:Double.parseDouble(insuranceBO.getInsurance().getJobAddFeeWithJob()))
+			]]>
+		</item>
+		<item id="sex" name="获取被保人性别">insuranceBO.getInsurantBO().getInsurant().getSex()
+		</item>
+		<item id="payIntv" name="获取险种缴费期间">insuranceBO.getInsurance().getPayIntv()
+		</item>
+		<item id="payEndYear" name="获取险种缴费期间">insuranceBO.getInsurance().getPayEndYear()
+		</item>
+		<item id="insuYears" name="获取险种保障或缴费期间范围">insuranceBO.getInsurance().getInsuYears()
+		</item>
+		<item id="socialInsuFlag" name="获取险种对应被保人是否有社会、医疗保险">insuranceBO.getInsurance().getSocialInsuFlag()
+		</item>
+		<item id="payEndYearFlag" name="获取险种缴费期间">insuranceBO.getInsurance().getPayEndYearFlag()
+		</item>
+		<item id="insuYearsFlag" name="获取险种保障或缴费期间范围">insuranceBO.getInsurance().getInsuYearsFlag()
+		</item>
+		<item id="sumPremByProductCode" name="获取建议书中某指定险种的保费之和">insuranceBO.getProposalBO().sumPremByProductCode
+		</item>
+		<item id="getPremByProductCode" name="获取建议书中某指定险种的年交保费">insuranceBO.getProposalBO().getPremByProductCode
+		</item>
+		<item id="getJobAddFeeByProductCode" name="获取建议书中某指定险种的职业加费">insuranceBO.getProposalBO().getJobAddFeeByProductCode
+		</item>
+
+		<item id="sumPremWithJobByProductCode" name="获取建议书中某指定险种的保费之和">insuranceBO.getProposalBO().sumPremWithJobByProductCode
+		</item>
+		<item id="getPremWithJobByProductCode" name="获取建议书中某指定险种的年交保费">insuranceBO.getProposalBO().getPremWithJobByProductCode
+		</item>
+		<item id="getJobAddFeeWithJobByProductCode" name="获取建议书中某指定险种的职业加费">insuranceBO.getProposalBO().getJobAddFeeWithJobByProductCode
+		</item>
+
+
+		<item id="computeAmountByProductCode" name="计算建议书中某指定险种的保额">insuranceBO.getProposalBO().computeAmountByProductCode
+		</item>
+		<item id="computePremByProductCode" name="计算建议书中某指定险种的保费">insuranceBO.getProposalBO().computePremByProductCode
+		</item>
+		<item id="computeJobAddFeeByProductCode" name="计算建议书中某指定险种的职业加费">insuranceBO.getProposalBO().computeJobAddFeeByProductCode
+		</item>
+		<item id="computeAmountWithJobByProductCode" name="计算建议书中某指定险种的保额">insuranceBO.getProposalBO().computeAmountWithJobByProductCode
+		</item>
+		<item id="computePremWithJobByProductCode" name="计算建议书中某指定险种的保费">insuranceBO.getProposalBO().computePremWithJobByProductCode
+		</item>
+		<item id="computeJobAddFeeWithJobByProductCode" name="计算建议书中某指定险种的职业加费">insuranceBO.getProposalBO().computeJobAddFeeWithJobByProductCode
+		</item>
+
+
+		<item id="parentNAmount" name="获取主险险种保额（数字型）">Double.parseDouble(insuranceBO.getParent().getInsurance().getAmount())
+		</item>
+		<item id="parentNMulti" name="获取主险险种份数或档次（数字型）">Integer.parseInt(insuranceBO.getParent().getInsurance().getMulti())
+		</item>
+		<item id="parentNPrem" name="获取主险险种保费(数字型)">Double.parseDouble(insuranceBO.getParent().getInsurance().getPrem())
+		</item>
+		<item id="parentNJobAddFee" name="获取主险险种保费(数字型)">
+		<![CDATA[((insuranceBO.getParent().getInsurance().getJobAddFee()!= null &&!insuranceBO.getParent().getInsurance().getJobAddFee().equals(""))?Double.parseDouble(insuranceBO.getParent().getInsurance().getJobAddFee()):0)]]>
+		</item>
+		<item id="parentAppntAge" name="主险投保人年龄">insuranceBO.getParent().getProposalBO().getApplicantBO().getAge()
+		</item>
+		<item id="parentExpireAppntAge" name="主险投保人保险期满时投保人年龄">insuranceBO.getParent().getExpireAppntAge()
+		</item>
+		<item id="expireAppntAge" name="主险投保人保险期满时投保人年龄">insuranceBO.getExpireAppntAge()
+		</item>
+		<item id="parent" name="主险投保人保险期满时投保人年龄">insuranceBO.getParent()</item>
+		<item id="parentPrem" name="获取主险保费">insuranceBO.getParent().getInsurance().getPrem()
+		</item>
+		<item id="parentJobAddFee" name="获取主险险种保费(数字型)">insuranceBO.getParent().getInsurance().getJobAddFee()
+		</item>
+		<item id="parentAmount" name="获取主险保额">insuranceBO.getParent().getInsurance().getAmount()
+		</item>
+		<item id="parentMulti" name="获取主险份数或档次">insuranceBO.getParent().getInsurance().getMulti()
+		</item>
+		<item id="parentSex" name="获取主险被保人性别">insuranceBO.getParent().getInsurantBO().getSex()
+		</item>
+		<item id="parentPayIntv" name="获取主险缴费期间">insuranceBO.getParent().getInsurance().getPayIntv()
+		</item>
+		<item id="parentInsuYears" name="获取险种保障或缴费期间范围">insuranceBO.getParent().getInsurance().getInsuYears()
+		</item>
+		<item id="parentPayEndYear" name="获取主险险种缴费期间">insuranceBO.getParent().getInsurance().getPayEndYear()
+		</item>
+		<item id="parentNInsuYears" name="获取险种保障或缴费期间范围">Integer.parseInt(insuranceBO.getParent().getInsurance().getInsuYears())
+		</item>
+		<item id="parentNPayEndYear" name="获取主险险种缴费期间">Integer.parseInt(insuranceBO.getParent().getInsurance().getPayEndYear())
+		</item>
+		<item id="parentPayEndYearFlag" name="获取主险被保人性别">insuranceBO.getParent().getInsurance().getPayEndYearFlag()
+		</item>
+		<item id="parentInsuYearsFlag" name="获取主险缴费期间">insuranceBO.getParent().getInsurance().getInsuYearsFlag()
+		</item>
+
+
+		<item id="getPayEndYearsRangeByInsuYears" name="获取险种保障或缴费期间范围">insuranceBO.getPayEndYearsRangeByInsuYears
+		</item>
+		<item id="getPayEndYearsRangeByParent" name="获取险种保障或缴费期间范围">insuranceBO.getPayEndYearsRangeByParent
+		</item>
+		<item id="getInsuYearsRangeByParent" name="获取险种保障或缴费期间范围">insuranceBO.getInsuYearsRangeByParent
+		</item>
+		<item id="getPeriodRangeIntersection" name="获取两个范围的交集">insuranceBO.getPeriodRangeIntersection
+		</item>
+		<item id="getInsuYearsRangeByAge" name="根据被保人年龄获取可保期间">insuranceBO.getInsuYearsRangeByAge
+		</item>
+		<item id="getPolicyPeriodYear" name="获取险种可以保证多少年">insuranceBO.getPolicyPeriodYear
+		</item>
+
+		<item id="computeInsuYearsByParentPayEndYear" name="根据主险的缴费期间获取附加险的保障期间">insuranceBO.computeInsuYearsByParentPayEndYear()
+		</item>
+		<item id="getParentSumPrem" name="获取主险累计保费">insuranceBO.getParant().getParentSumPrem()
+		</item>
+		<item id="sumPrem" name="获取险种保费">insuranceBO.getInsurance().getSumPrem()
+		</item>
+		<item id="computeAndReturnPrem" name="计算并返回保费">insuranceBO.computeAndReturnPrem()
+		</item>
+		<item id="computeAndReturnPremWithJob" name="计算并返回保费">insuranceBO.computeAndReturnPremWithJob()
+		</item>
+		<item id="computeAndReturnAmount" name="获取主险累计保费">insuranceBO.computeAndReturnAmount()
+		</item>
+		<item id="computeAndReturnAmountWithJob" name="获取主险累计保费">insuranceBO.computeAndReturnAmountWithJob()
+		</item>
+		<item id="occupationTypeCode" name="获取被保人职业代码(和兼职比较职业类别高的职业)">insuranceBO.getInsurantBO().getHigherOccupation(insuranceBO.getContext()).getTypeCode()
+		</item>
+		<item id="occupationType" name="获取被保人职业代码(和兼职比较职业类别高的职业)">insuranceBO.getInsurantBO().getHigherOccupation(insuranceBO.getContext()).getType()
+		</item>
+		<item id="appntOccupationType" name="获取投保人职业代码(和兼职比较职业类别高的职业)">insuranceBO.getProposalBO().getApplicantBO().getHigherOccupation(insuranceBO.getContext()).getType()
+		</item>
+		<item id="getInsurantSocialInsuFlag" name="获取该险种的被保人下的其他险种已经设置的社保标记">insuranceBO.getInsurantSocialInsuFlag()
+		</item>
+		<item id="sumInterestWithRate1"
+			name="计算某种利益的累积（带利息的累计），利息算法为第一年*（1+i*利息）、第二年*（1+(i-1)*利息）、第i年*（1+利息）">insuranceBO.sumInterestWithRate1</item>
+		<item id="sumInterestWithRate2"
+			name="计算某种利益的累积（带利息的累计），利息算法为第一年*（1+利息）的i次方、第二年*（1+利息）的i-1次方、第i年*（1+利息)的一次方">insuranceBO.sumInterestWithRate2</item>
+		<item id="sumInterestWithNoRate" name="计算某种利益的累积（不带利息的累计)">insuranceBO.sumInterestNoRate
+		</item>
+		<item id="number2str" name="将数字型转换成字符串，防止直接调用.toString方法变成科学计数法">com.minsheng.esales.client.pub.utils.NumberUtils.round2str
+		</item>
+	</attribute>
+	<rules>
+		<rule id="checkSingleMain">
+			<if id="if" msg="只能添加一个主险">
+				<test><![CDATA[${hasMain} >1]]></test>
+			</if>
+		</rule>
+		<rule id="checkInsureSingle">
+			<if id="if" msg="同一个险种只能购买一次">
+				<test><![CDATA[${hasSameInsurance} == true]]></test>
+			</if>
+		</rule>
+		<rule id="checkAppntAge">
+			<if id="if" msg="投保人年龄必须大于等于18周岁">
+				<test><![CDATA[${getAppntAge} < 18]]></test>
+			</if>
+		</rule>
+		<rule id="checkLiability">
+			<if id="if" msg="只能添加一个豁免责任的险种">
+				<test><![CDATA[${hasLiability}("exempt") > 1]]></test>
+			</if>
+		</rule>
+	</rules>
+</insurList>

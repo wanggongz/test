@@ -1,0 +1,13 @@
+#本项目服务端口
+server:
+  port: 9015
+
+#spring配置    
+spring:
+  application: 
+    name: verify-server
+
+#mybatis
+mybatis: 
+  typeAliasesPackage: com.shenpu.proxy.verify.domain
+  

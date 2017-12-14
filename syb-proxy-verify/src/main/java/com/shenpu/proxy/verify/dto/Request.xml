@@ -1,0 +1,147 @@
+<!-- 投保数据示例 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<Packet type="REQUEST" version="1.0">
+	<Head>
+		<RequestID>AC00003900021456305194844</RequestID>
+		<RequestType>0001</RequestType>
+		<User>AC000039</User>
+		<Password>bc0TYXab4UjcZiOtX9XpdQ</Password>
+		<!-- 流水号(返回)-->
+		<ApplyNo>bc0TYXab4UjcZiOtX9XpdQ</ApplyNo>
+	</Head>
+	<Body>
+		<Policy>
+			<!-- 机构关联号 -->
+			<AgencyPolicyRef>Allianz12345678901234567890</AgencyPolicyRef>
+			<!-- 产品编码 -->
+			<ProductCode>ODP1</ProductCode>
+			<!-- 产品名字 -->
+			<ProductName></ProductName>
+			<!-- 保险期间单位(日、月、年)-->
+			<PolicyTermUnit></PolicyTermUnit>
+			<!-- 保险期间 -->
+			<PolicyTerm></PolicyTerm>
+			<!-- 缴费期间 -->
+			<PremiumTerm></PremiumTerm>
+			<!-- 缴费方式 -->
+			<Payintv></Payintv>
+			<!-- 投保日期 -->
+			<IssueDate></IssueDate>
+			<!-- 投保单号 -->
+			<ProposalNo></ProposalNo>
+			<!-- 总保费 -->
+			<TotalPremium>80000</TotalPremium>
+			<!-- 投保日期 -->
+			<IssueDate>20161120142800</IssueDate>
+			<!-- 保单生效日期 -->
+			<EffectiveDate>20161121000000</EffectiveDate>
+			<!-- 保单结束日期 -->
+			<ExpireDate>20161220235900</ExpireDate>
+		</Policy>
+		<!-- 渠道 -->
+		<Agency>
+			<AgencyCode>AC000039</AgencyCode>
+		</Agency>
+		<!-- 投保人信息 -->
+		<Appnt>
+			<AppntName>投保人</AppntName>
+			<IdType>3</IdType>
+			<IdNo>G123456789</IdNo>
+			<Sex>M</Sex>
+			<Birthday>19891016000000</Birthday>
+			<Mobile>136****3688</Mobile>
+			<Address>Tianhe Beilu 233#</PHAddress>
+			<Zipcode>430424</PHPostCode>
+			<Email>test@test.com</Email>
+			<Nativeplace>国籍代码</Nativeplace>
+			<Occupation>职业代码</Occupation>
+			<ProvId>省</ProvId>
+			<CityId>市</CityId>
+			<CountyId>区</CountyId>
+			<Marriage>婚否</Marriage>
+			<TotalPremium>80</TotalPremium>
+		</Appnt>
+		<InsuredList>
+			<Insured>
+				<InsuredGrade>1</InsuredGrade>
+				<InsuredType>1</InsuredType>
+				<InsuredName>第一个被保险人</InsuredName>
+				<IdType>2</IdType>
+				<IdNumber>G1989K88</IdNumber>
+				<Birthday>19891116000000</Birthday>
+				<Mobile>136****3688</Mobile>
+				<Email>test@test.com</Email>
+				<Sex>M</Sex>
+				<Relation>与投保人关系</Relation>
+				<Occupation>ZZ01</Occupation>
+				<Nativeplace>国籍代码</Nativeplace>
+				<Occupation>职业代码</Occupation>
+				<ProvId>省</ProvId>
+				<CityId>市</CityId>
+				<CountyId>区</CountyId>
+				<Marriage>婚否</Marriage>
+				<Premium>80</Premium>
+			</Insured>
+			<Insured>
+				<InsuredGrade>2</InsuredGrade>
+				<InsuredType>1</InsuredType>
+				<InsuredName>第二个被保险人</InsuredName>
+				<IdType>2</IdType>
+				<IdNumber>G1989K88</IdNumber>
+				<Birthday>19891116000000</Birthday>
+				<Mobile>136****3688</Mobile>
+				<Email>test@test.com</Email>
+				<Sex>M</Sex>
+				<Relation>与投保人关系</Relation>
+				<Occupation>ZZ01</Occupation>
+				<Nativeplace>国籍代码</Nativeplace>
+				<Occupation>职业代码</Occupation>
+				<ProvId>省</ProvId>
+				<CityId>市</CityId>
+				<CountyId>区</CountyId>
+				<Marriage>婚否</Marriage>
+				<Premium>80</Premium>
+			</Insured>
+		</InsuredList>
+		<BeneList>
+			<Bene>
+				<BeneGrade>1</BeneGrade>
+				<BeneName>第一个受益人</BeneName>
+				<IdType>2</IdType>
+				<IdNumber>G1989K88</IdNumber>
+				<Birthday>19891116000000</Birthday>
+				<Mobile>136****3688</Mobile>
+				<Email>test@test.com</Email>
+				<Sex>M</Sex>
+				<Relation>与投保人关系</Relation>
+				<Occupation>ZZ01</Occupation>
+				<Nativeplace>国籍代码</Nativeplace>
+				<Occupation>职业代码</Occupation>
+				<ProvId>省</ProvId>
+				<CityId>市</CityId>
+				<CountyId>区</CountyId>
+				<Marriage>婚否</Marriage>
+			</Bene>
+			<Bene>
+				<BeneGrade>2</BeneGrade>
+				<BeneName>第二个受益人</BeneName>
+				<IdType>2</IdType>
+				<IdNumber>G1989K88</IdNumber>
+				<Birthday>19891116000000</Birthday>
+				<Mobile>136****3688</Mobile>
+				<Email>test@test.com</Email>
+				<Sex>M</Sex>
+				<Relation>与投保人关系</Relation>
+				<Occupation>ZZ01</Occupation>
+				<Nativeplace>国籍代码</Nativeplace>
+				<Occupation>职业代码</Occupation>
+				<ProvId>省</ProvId>
+				<CityId>市</CityId>
+				<CountyId>区</CountyId>
+				<Marriage>婚否</Marriage>
+			</Bene>
+		</BeneList>
+	</Body>
+</Packet>
+		
+			

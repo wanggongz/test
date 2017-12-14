@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.blacklist.mapper.OccupationDictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.blacklist.domain.OccupationDictionary">
+    <id column="occupation_id" jdbcType="VARCHAR" property="id" />
+    <result column="business" jdbcType="VARCHAR" property="business" />
+    <result column="occupation_type" jdbcType="VARCHAR" property="occupationType" />
+    <result column="occupation_code" jdbcType="VARCHAR" property="occupationCode" />
+    <result column="occupation_name" jdbcType="VARCHAR" property="occupationName" />
+    <result column="occupation_category" jdbcType="VARCHAR" property="occupationCategory" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    occupation_id, business, occupation_type, occupation_code, occupation_name, occupation_category
+  </sql>
+  <select id="selectByAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_occupation_dictionary
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_occupation_dictionary
+    where occupation_id = #{occupationId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from syb_occupation_dictionary
+    where occupation_id = #{occupationId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shenpu.proxy.blacklist.domain.OccupationDictionary">
+    insert into syb_occupation_dictionary (occupation_id, business, occupation_type, 
+      occupation_code, occupation_name, occupation_category
+      )
+    values (#{occupationId,jdbcType=VARCHAR}, #{business,jdbcType=VARCHAR}, #{occupationType,jdbcType=VARCHAR}, 
+      #{occupationCode,jdbcType=VARCHAR}, #{occupationName,jdbcType=VARCHAR}, #{occupationCategory,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.blacklist.domain.OccupationDictionary">
+    insert into syb_occupation_dictionary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="occupationId != null">
+        occupation_id,
+      </if>
+      <if test="business != null">
+        business,
+      </if>
+      <if test="occupationType != null">
+        occupation_type,
+      </if>
+      <if test="occupationCode != null">
+        occupation_code,
+      </if>
+      <if test="occupationName != null">
+        occupation_name,
+      </if>
+      <if test="occupationCategory != null">
+        occupation_category,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="occupationId != null">
+        #{occupationId,jdbcType=VARCHAR},
+      </if>
+      <if test="business != null">
+        #{business,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationType != null">
+        #{occupationType,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationCode != null">
+        #{occupationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationName != null">
+        #{occupationName,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationCategory != null">
+        #{occupationCategory,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shenpu.proxy.blacklist.domain.OccupationDictionary">
+    update syb_occupation_dictionary
+    <set>
+      <if test="business != null">
+        business = #{business,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationType != null">
+        occupation_type = #{occupationType,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationCode != null">
+        occupation_code = #{occupationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationName != null">
+        occupation_name = #{occupationName,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationCategory != null">
+        occupation_category = #{occupationCategory,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where occupation_id = #{occupationId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.blacklist.domain.OccupationDictionary">
+    update syb_occupation_dictionary
+    set business = #{business,jdbcType=VARCHAR},
+      occupation_type = #{occupationType,jdbcType=VARCHAR},
+      occupation_code = #{occupationCode,jdbcType=VARCHAR},
+      occupation_name = #{occupationName,jdbcType=VARCHAR},
+      occupation_category = #{occupationCategory,jdbcType=VARCHAR}
+    where occupation_id = #{occupationId,jdbcType=VARCHAR}
+  </update>
+</mapper>

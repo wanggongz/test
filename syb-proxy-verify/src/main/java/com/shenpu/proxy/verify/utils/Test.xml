@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<product>
+	<instrs>
+		<instr id="112" hasProductSpec="false" beginDate="2017-05-06">
+			<rule id="112" name="校验。。。。。。。。。。。。">
+				<if id="if" msg="判断=============">
+					<test>getAge()>1</test>
+				</if>
+			</rule>
+		</instr>
+	</instrs>
+	<rules>
+		<rule id="11111" name="getAge">
+			<if id="if" msg="判断=============">
+				<test>getAge()>1</test>
+			</if>
+		</rule>
+	</rules>
+</product>

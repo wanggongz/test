@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.blacklist.mapper.DictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.blacklist.domain.Dictionary">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="code_type" jdbcType="VARCHAR" property="codeType" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="code_label" jdbcType="VARCHAR" property="codeLabel" />
+    <result column="show_order" jdbcType="INTEGER" property="showOrder" />
+    <result column="parent_code" jdbcType="VARCHAR" property="parentCode" />
+    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="created_user" jdbcType="VARCHAR" property="createdUser" />
+    <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="modified_user" jdbcType="VARCHAR" property="modifiedUser" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, code_type, code, code_label, show_order, parent_code, created_date, created_user, 
+    modified_date, modified_user, status
+  </sql>
+  <select id="selectAllExample" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from syb_dictionary
+    where status=1
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from syb_dictionary
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from syb_dictionary
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shenpu.proxy.blacklist.domain.Dictionary">
+    insert into syb_dictionary (id, code_type, code, 
+      code_label, show_order, parent_code, 
+      created_date, created_user, modified_date, 
+      modified_user, status)
+    values (#{id,jdbcType=BIGINT}, #{codeType,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{codeLabel,jdbcType=VARCHAR}, #{showOrder,jdbcType=INTEGER}, #{parentCode,jdbcType=VARCHAR}, 
+      #{createdDate,jdbcType=TIMESTAMP}, #{createdUser,jdbcType=VARCHAR}, #{modifiedDate,jdbcType=TIMESTAMP}, 
+      #{modifiedUser,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.blacklist.domain.Dictionary">
+    insert into syb_dictionary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="codeType != null">
+        code_type,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="codeLabel != null">
+        code_label,
+      </if>
+      <if test="showOrder != null">
+        show_order,
+      </if>
+      <if test="parentCode != null">
+        parent_code,
+      </if>
+      <if test="createdDate != null">
+        created_date,
+      </if>
+      <if test="createdUser != null">
+        created_user,
+      </if>
+      <if test="modifiedDate != null">
+        modified_date,
+      </if>
+      <if test="modifiedUser != null">
+        modified_user,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="codeType != null">
+        #{codeType,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="codeLabel != null">
+        #{codeLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="showOrder != null">
+        #{showOrder,jdbcType=INTEGER},
+      </if>
+      <if test="parentCode != null">
+        #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDate != null">
+        #{createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdUser != null">
+        #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedDate != null">
+        #{modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedUser != null">
+        #{modifiedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shenpu.proxy.blacklist.domain.Dictionary">
+    update syb_dictionary
+    <set>
+      <if test="codeType != null">
+        code_type = #{codeType,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="codeLabel != null">
+        code_label = #{codeLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="showOrder != null">
+        show_order = #{showOrder,jdbcType=INTEGER},
+      </if>
+      <if test="parentCode != null">
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDate != null">
+        created_date = #{createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdUser != null">
+        created_user = #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedDate != null">
+        modified_date = #{modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedUser != null">
+        modified_user = #{modifiedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.blacklist.domain.Dictionary">
+    update syb_dictionary
+    set code_type = #{codeType,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      code_label = #{codeLabel,jdbcType=VARCHAR},
+      show_order = #{showOrder,jdbcType=INTEGER},
+      parent_code = #{parentCode,jdbcType=VARCHAR},
+      created_date = #{createdDate,jdbcType=TIMESTAMP},
+      created_user = #{createdUser,jdbcType=VARCHAR},
+      modified_date = #{modifiedDate,jdbcType=TIMESTAMP},
+      modified_user = #{modifiedUser,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

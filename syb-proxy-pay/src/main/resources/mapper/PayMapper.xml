@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shenpu.proxy.pay.mapper.PayMapper">
+	<resultMap id="payResultMap" type="com.shenpu.proxy.pay.domain.Pay">
+		<id column="PAY_ID" property="payId" jdbcType="CHAR" />
+		<result column="PAY_MONEY" property="payMoney" jdbcType="DECIMAL" />
+		<result column="PAY_STATE" property="payState" jdbcType="VARCHAR" />
+		<result column="PAY_TIME" property="payTime" jdbcType="TIMESTAMP" />
+		<result column="ORDER_NO" property="orderNo" jdbcType="CHAR" />
+		<result column="PAY_CHANNEL" property="payChannel" jdbcType="VARCHAR" />
+		<result column="INSERT_TIME" property="insertTime" jdbcType="TIMESTAMP" />
+		<result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+
+	<sql id="Base_Column_List">
+		PAY_ID, PAY_MONEY, PAY_STATE, PAY_TIME, ORDER_NO,
+		PAY_CHANNEL, INSERT_TIME,
+		UPDATE_TIME
+	</sql>
+	<select id="selectByOrderNo" resultMap="payResultMap"
+		parameterType="com.shenpu.proxy.pay.domain.Pay">
+		select
+		<include refid="Base_Column_List" />
+		from t_pay
+		where ORDER_NO = #{orderNo,jdbcType=CHAR}
+	</select>
+
+	<insert id="insert" parameterType="com.shenpu.proxy.pay.domain.Pay">
+		insert into t_pay
+		(PAY_ID, PAY_MONEY, PAY_STATE,
+		PAY_TIME, ORDER_NO, PAY_CHANNEL,
+		INSERT_TIME, UPDATE_TIME)
+		values (#{payId,jdbcType=CHAR},
+		#{payMoney,jdbcType=DECIMAL},
+		#{payState,jdbcType=VARCHAR},
+		#{payTime,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=CHAR},
+		#{payChannel,jdbcType=VARCHAR},
+		now(), now())
+	</insert>
+
+	<update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.pay.domain.Pay">
+		update t_pay
+		<set>
+			<if test="payMoney != null">
+				PAY_MONEY = #{payMoney,jdbcType=DECIMAL},
+			</if>
+			<if test="payState != null">
+				PAY_STATE = #{payState,jdbcType=VARCHAR},
+			</if>
+			<if test="payTime != null">
+				PAY_TIME = #{payTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orderNo != null">
+				ORDER_NO = #{orderNo,jdbcType=TIMESTAMP},
+			</if>
+			<if test="payChannel != null">
+				PAY_CHANNEL = #{payChannel,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where PAY_ID = #{payId,jdbcType=CHAR}
+	</update>
+
+	<update id="updatePayByOrderNo" parameterType="com.shenpu.proxy.pay.domain.Pay">
+		update t_pay
+		<set>
+			<if test="payMoney != null">
+				PAY_MONEY = #{payMoney,jdbcType=DECIMAL},
+			</if>
+			<if test="payState != null">
+				PAY_STATE = #{payState,jdbcType=VARCHAR},
+			</if>
+			<if test="payTime != null">
+				PAY_TIME = #{payTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="payChannel != null">
+				PAY_CHANNEL = #{payChannel,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ORDER_NO = #{orderNo,jdbcType=CHAR}
+	</update>
+</mapper>

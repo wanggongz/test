@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Packet>
+	<Head>
+		<RequestID>AC00003900021456305194844</RequestID>
+		<ResquestType>0002</ResquestType>
+		<ResponseCode>1</ResponseCode>
+		<ErrorCode>0000</ErrorCode>
+		<ErrorMessage>成功</ErrorMessage>
+	</Head>
+	<Body>
+		<ApplyNo>301-1-593-16-0000017390-00</ApplyNo>
+		<AgencyPolicyRef>Allianz12345678901234567890</AgencyPolicyRef>
+		<!-- 保单状态 -->
+		<PolicyStatus>70</PolicyStatus>
+		<!-- 总保费 -->
+		<TotalPremium>80</TotalPremium>
+		<InsuredPremiumList>
+			<InsuredPremium>
+				<InsuredGrade>1</InsuredGrade>
+				<InsuredName>第一个被保险人</InsuredName>
+				<Premium>40</Premium>
+			</InsuredPremium>
+			<InsuredPremium>
+				<InsuredId>2</InsuredId>
+				<InsuredName>第二个被保险人</InsuredName>
+				<Premium>40</Premium>
+			</InsuredPremium>
+		</InsuredPremiumList>
+	</Body>
+</Packet>

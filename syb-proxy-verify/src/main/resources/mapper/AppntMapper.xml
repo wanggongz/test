@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.verify.mapper.AppntMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.verify.domain.Appnt">
+    <result column="appnt_id" jdbcType="VARCHAR" property="appntId" />
+    <result column="policy_no" jdbcType="VARCHAR" property="policyNo" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="appnt_name" jdbcType="VARCHAR" property="appntName" />
+    <result column="sex" jdbcType="CHAR" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="id_type" jdbcType="INTEGER" property="idType" />
+    <result column="id_no" jdbcType="VARCHAR" property="idNo" />
+    <result column="occupation" jdbcType="VARCHAR" property="occupation" />
+    <result column="occupation_name" jdbcType="VARCHAR" property="occupationName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="nativeplace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="prov_id" jdbcType="VARCHAR" property="provId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="county_id" jdbcType="VARCHAR" property="countyId" />
+    <result column="map_coordinates" jdbcType="VARCHAR" property="mapCoordinates" />
+    <result column="degree" jdbcType="VARCHAR" property="degree" />
+    <result column="marriage" jdbcType="CHAR" property="marriage" />
+    <result column="year_incom" jdbcType="VARCHAR" property="yearIncom" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="is_statutory" jdbcType="VARCHAR" property="isStatutory" />
+    <result column="isself" jdbcType="VARCHAR" property="isself" />
+    <result column="id_type_name" jdbcType="VARCHAR" property="idTypeName" />
+    <result column="marriage_name" jdbcType="VARCHAR" property="marriageName" />
+    <result column="degree_name" jdbcType="VARCHAR" property="degreeName" />
+    <result column="city_id_name" jdbcType="VARCHAR" property="cityIdName" />
+    <result column="county_id_name" jdbcType="VARCHAR" property="countyIdName" />
+    <result column="prov_id_name" jdbcType="VARCHAR" property="provIdName" />
+    <result column="nativeplace_name" jdbcType="VARCHAR" property="nativeplaceName" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    appnt_id, policy_no, order_no, apply_no, appnt_name, sex, age, birthday, id_type, 
+    id_no, occupation, occupation_name, mobile, email, zip_code, nativeplace, prov_id, 
+    city_id, county_id, map_coordinates, degree, marriage, year_incom, height, weight, 
+    status, insert_time, update_time, is_statutory, isself, id_type_name, marriage_name, 
+    degree_name, city_id_name, county_id_name, prov_id_name, nativeplace_name
+  </sql>
+  <insert id="insert" parameterType="com.shenpu.proxy.verify.domain.Appnt">
+    insert into syb_appnt (appnt_id, policy_no, order_no, 
+      apply_no, appnt_name, sex, 
+      age, birthday, id_type, 
+      id_no, occupation, occupation_name, 
+      mobile, email, zip_code, 
+      nativeplace, prov_id, city_id, 
+      county_id, map_coordinates, degree, 
+      marriage, year_incom, height, 
+      weight, status, insert_time, 
+      update_time, is_statutory, isself, 
+      id_type_name, marriage_name, degree_name, 
+      city_id_name, county_id_name, prov_id_name, 
+      nativeplace_name)
+    values (#{appntId,jdbcType=VARCHAR}, #{policyNo,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, 
+      #{applyNo,jdbcType=VARCHAR}, #{appntName,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
+      #{age,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, #{idType,jdbcType=INTEGER}, 
+      #{idNo,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{occupationName,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, 
+      #{nativeplace,jdbcType=VARCHAR}, #{provId,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, 
+      #{countyId,jdbcType=VARCHAR}, #{mapCoordinates,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, 
+      #{marriage,jdbcType=CHAR}, #{yearIncom,jdbcType=VARCHAR}, #{height,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{insertTime,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{isStatutory,jdbcType=VARCHAR}, #{isself,jdbcType=VARCHAR}, 
+      #{idTypeName,jdbcType=VARCHAR}, #{marriageName,jdbcType=VARCHAR}, #{degreeName,jdbcType=VARCHAR}, 
+      #{cityIdName,jdbcType=VARCHAR}, #{countyIdName,jdbcType=VARCHAR}, #{provIdName,jdbcType=VARCHAR}, 
+      #{nativeplaceName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.verify.domain.Appnt">
+    insert into syb_appnt
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="appntId != null">
+        appnt_id,
+      </if>
+      <if test="policyNo != null">
+        policy_no,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="appntName != null">
+        appnt_name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idType != null">
+        id_type,
+      </if>
+      <if test="idNo != null">
+        id_no,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="occupationName != null">
+        occupation_name,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="zipCode != null">
+        zip_code,
+      </if>
+      <if test="nativeplace != null">
+        nativeplace,
+      </if>
+      <if test="provId != null">
+        prov_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="countyId != null">
+        county_id,
+      </if>
+      <if test="mapCoordinates != null">
+        map_coordinates,
+      </if>
+      <if test="degree != null">
+        degree,
+      </if>
+      <if test="marriage != null">
+        marriage,
+      </if>
+      <if test="yearIncom != null">
+        year_incom,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isStatutory != null">
+        is_statutory,
+      </if>
+      <if test="isself != null">
+        isself,
+      </if>
+      <if test="idTypeName != null">
+        id_type_name,
+      </if>
+      <if test="marriageName != null">
+        marriage_name,
+      </if>
+      <if test="degreeName != null">
+        degree_name,
+      </if>
+      <if test="cityIdName != null">
+        city_id_name,
+      </if>
+      <if test="countyIdName != null">
+        county_id_name,
+      </if>
+      <if test="provIdName != null">
+        prov_id_name,
+      </if>
+      <if test="nativeplaceName != null">
+        nativeplace_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="appntId != null">
+        #{appntId,jdbcType=VARCHAR},
+      </if>
+      <if test="policyNo != null">
+        #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="appntName != null">
+        #{appntName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        #{idType,jdbcType=INTEGER},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="occupationName != null">
+        #{occupationName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="provId != null">
+        #{provId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null">
+        #{countyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mapCoordinates != null">
+        #{mapCoordinates,jdbcType=VARCHAR},
+      </if>
+      <if test="degree != null">
+        #{degree,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null">
+        #{marriage,jdbcType=CHAR},
+      </if>
+      <if test="yearIncom != null">
+        #{yearIncom,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isStatutory != null">
+        #{isStatutory,jdbcType=VARCHAR},
+      </if>
+      <if test="isself != null">
+        #{isself,jdbcType=VARCHAR},
+      </if>
+      <if test="idTypeName != null">
+        #{idTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="marriageName != null">
+        #{marriageName,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeName != null">
+        #{degreeName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityIdName != null">
+        #{cityIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="countyIdName != null">
+        #{countyIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="provIdName != null">
+        #{provIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplaceName != null">
+        #{nativeplaceName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByApplyNo" parameterType="String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from syb_appnt 
+    where apply_no = #{applyNo}
+  </select>
+
+</mapper>

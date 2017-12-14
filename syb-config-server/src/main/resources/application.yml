@@ -1,0 +1,43 @@
+
+
+    
+server:
+  port: 7001
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native  #本地存储配置方式
+
+# 注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ws:123@localhost:8761/eureka/   
+
+
+
+#指定配置文件的位置
+#spring.cloud.config.server.native.searchLocations=file:F:/properties/ 
+    
+## 配置svn库
+#  profiles:
+#    active: subversion
+#  main:
+#    show-banner: false
+#  cloud:
+#    config:
+#      server:
+#        svn:
+#          uri: svn://59.110.47.143/svn/shenpu_syb/trunk/config-repo
+#          username: wangsheng
+#          password: wangsheng
+#      enabled: true
+
+
+
+
+
+
+  

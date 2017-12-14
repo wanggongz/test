@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.print.mapper.PrintLogMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.print.domain.PrintLog">
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_msg" jdbcType="INTEGER" property="isMsg" />
+    <result column="is_pdf" jdbcType="INTEGER" property="isPdf" />
+  </resultMap>
+  <insert id="insert" parameterType="com.shenpu.proxy.print.domain.PrintLog">
+    insert into syb_print_log (apply_no, print_time, status, 
+      is_msg, is_pdf)
+    values (#{applyNo,jdbcType=VARCHAR}, #{printTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{isMsg,jdbcType=INTEGER}, #{isPdf,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.print.domain.PrintLog">
+    insert into syb_print_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="isMsg != null">
+        is_msg,
+      </if>
+      <if test="isPdf != null">
+        is_pdf,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isMsg != null">
+        #{isMsg,jdbcType=INTEGER},
+      </if>
+      <if test="isPdf != null">
+        #{isPdf,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

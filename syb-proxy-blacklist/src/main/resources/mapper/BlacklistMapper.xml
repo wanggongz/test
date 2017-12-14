@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.blacklist.mapper.BlacklistMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.blacklist.domain.Blacklist">
+    <result column="blacklist_id" jdbcType="VARCHAR" property="blacklistId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="id_type" jdbcType="INTEGER" property="idType" />
+    <result column="id_no" jdbcType="VARCHAR" property="idNo" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    blacklist_id, real_name, id_type, id_no, reason, remark, status
+  </sql>
+  <select id="selectAll"  resultMap="BaseResultMap">
+  	select 
+  	 <include refid="Base_Column_List" />
+    from syb_blacklist
+  </select>
+  <insert id="insert" parameterType="com.shenpu.proxy.blacklist.domain.Blacklist">
+    insert into syb_blacklist (blacklist_id, real_name, id_type, 
+      id_no, reason, remark, 
+      status)
+    values (#{blacklistId,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{idType,jdbcType=INTEGER}, 
+      #{idNo,jdbcType=VARCHAR}, #{reason,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.blacklist.domain.Blacklist">
+    insert into syb_blacklist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="blacklistId != null">
+        blacklist_id,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="idType != null">
+        id_type,
+      </if>
+      <if test="idNo != null">
+        id_no,
+      </if>
+      <if test="reason != null">
+        reason,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="blacklistId != null">
+        #{blacklistId,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null">
+        #{idType,jdbcType=INTEGER},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null">
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

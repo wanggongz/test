@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<style>
+*{font-family:simsun;}
+body{
+	font-size: 9px;
+}
+table{
+	width: 100%;
+	margin-bottom: 5px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+td{
+	border: 1px solid #BBB;
+	color: #543E26;
+	font-size:9px;
+	padding-top:10px;
+	padding-left:5px;
+}
+td p{
+	display:block;
+	font-size:9px;
+	line-height:15px;
+}
+td span{
+	display:block;
+	font-size:9px;
+	line-height:15px;
+}
+li{
+	margin-top: .3em;
+	font-size:9px;
+}
+strong{
+	font-weight: bold;
+}
+</style>
+<title>投保单</title>
+
+</head>
+<body>
+   <div class="eleAppmain">
+	    <table  class="applyCon">
+	   		<tr><td style="text-align:right;background: #fff;border-color:#fff" colspan="2">M&nbsp;1&nbsp;1&nbsp;</td></tr>
+	   		<tr><td style="text-align:right;background: #fff;border-color:#fff" colspan="2">#if($appnt.policyNo) ${appnt.policyId} #end</td></tr>
+			<tr>
+				<td style="text-align:center;border-color:#fff;background: #fff;width: 160px" rowspan="2"><img style="padding:20px" src="${imgpath}logo.png" /></td>
+				<td><img style="width: 12px;" src='${imgpath}icon_check01.png'/>直属</td>
+			</tr>
+			<tr>
+				<td><p>
+				机构名称：<span>#if($agent.organName) ${agent.organName} #end</span></p></td>
+			</tr>
+			<tr>
+				<td style="text-align:center;border-color:#fff;background: #fff;" rowspan="2"><img style="padding:20px" src="${imgpath}familyHealth.png" /></td>
+				<td><p>业务员姓名：<span>#if($agent.agentName) ${agent.agentName} #end</span></p></td>
+			</tr>
+			<tr>
+				<td><p>业务员代码：<span>#if($agent.agentCode) ${agent.agentCode} #end</span></p></td>
+			</tr>		
+		</table>
+	</div>
+	<table>
+		<tr>
+			<td>投保须知</td>
+			<td><span style="font-size:9px;">
+			      一、投保单填写须知
+						<br></br>1.本投保单是订立保险合同的重要组成部分，在填写投保单之前，请您认真阅读投保提示书、所投险种的保险条款，在充分理解条款中的犹豫期条款、保险责任条款、责任免除条款、合同解除条款等内容后，再做出投保决定。如您选择分期缴纳保险费，请您根据自身的财务状况，选择合适的缴费期限和缴费金额，无法持续缴纳保险费可能导致保险合同效力中止或保险合同解除。
+						<br></br>2.请您按照本投保单内容要求，填写真实、完整、准确的客户信息，务必如实告知，尤其是联系电话及通讯地址，若发生变更，应及时办理变更手续，否则将会严重影响公司为您提供的相关服务项目，无法维护您的权益。如您未如实告知，昆仑健康保险股份有限公司（以下简称“我公司”）有权依法解除保险合同，并对合同解除前发生的保险事故不承担保险责任。
+						<br></br>3、我公司将通过投保单中填写的信息为您提供包括但不限于计算保费、核保、寄送信函和客户回访等服务，并承诺未经您同意，不会将您在本投保单中填写的客户信息用于我公司和第三方机构的销售活动。
+						<br></br>4、保险合同自我公司审核投保申请后同意承保、收取首期保险费并签发保险单开始生效，保险合同生效日期以保险单载明日期为准。
+						
+						
+						<br></br> 二、投保人、被保险人声明和授权
+						<br></br>1、  本人已认真阅读投保提示并亲笔签字确认，本投保单中填写的所有内容都真实准确完整，如有不实告知，并足以影响承保决定，贵公司有权依法解除保险合同，并对合同解除前发生的保险事故不承担保险责任。
+						<br></br>2、	本人已经从贵公司处获得了所投险种的保险条款，贵公司对条款进行了说明尤其是犹豫期条款、保险责任条款、责任免除条款、合同解除条款等内容向本人作明确提示与说明，本人确认已经明确知晓并正确理解所投险种的保险条款的全部内容，并同意遵守。
+						<br></br>3、	本人已了解，一年期主险/一年期附加险的保险期间为一年，选择自动申请续保方式下，如贵公司审核后同意续保、收取保险费后保险合同/附加保险合同继续有效；如贵公司审核后不同意续保、不再收取保险费，保险合同/附加保险合同满期终止。如本人决定终止续保，应于一年期主险/一年期附加险保险期间满期日前办理终止续保手续。
+						<br></br>4、	本人授权贵公司可以从医疗机构、保险公司等任何单位、组织和个人，就有关保险事宜查询或索取与本人相关的资料或证明，贵公司对个人资料承担保密义务。
+						此授权的影印件也同样有效。
+						<br></br>5、	本投保书中转账账户所有人、开户银行和账号均真实可靠，特授权贵公司从上述银行账户中划扣本次投保申请以及续期所需缴纳的保险费及保单服务相关费用。此授权将长期有效，直至保险合同缴费期满或本人以书面形式通知终止。
+						<br></br>6、本人已知晓：本投保单不得作为收取现金的凭证。
+						<br></br>7、如果投保计划中含有中国保监会认定的人身保险新型产品，请投保人在确认已阅读保险条款、产品说明书和投保提示书，了解本产品的特点和保单利益的不确定性后，在下面亲笔抄录后列语句后签名：“本人已阅读保险条款、产品说明书和投保提示书，了解本产品的特点和保单利益的不确定性。”<br></br>
+				</span>
+		   </td>
+		</tr>		
+	</table>
+	<table class="appnt">
+		<thead>
+			<tr>
+				<td colspan="4"><h3>投保人资料</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><p>姓名：<span>#if($appnt.appntName && ($appnt.appntName)!="null") ${appnt.appntName} #end</span></p></td>
+				<td><p>性别：<span>#if($appnt.appntName && $appnt.sex=="M") 男  #else 女   #end</span></p></td>
+				<td><p>出生日期：<span>#if($appnt.birthday && ($appnt.birthday)!="null") ${appnt.birthday} #end</span></p></td>
+				<td><p>国籍/户籍地：<span>#if($appnt.nativeplaceName && ($appnt.nativeplaceName)!="null" && $appnt.provIdName) ${appnt.nativeplaceName}/${appnt.provIdName} #end</span></p></td>
+			</tr>
+			<tr>
+				<td><p>证件类型：<span>#if($appnt.idTypeNameName && ($appnt.idTypeNameName)!="null") ${appnt.idTypeNameName} #end</span></p></td>
+				<td><p>证件号码：<span>#if($appnt.idNo && ($appnt.idNo)!="null") ${appnt.idNo} #end</span></p></td>
+				<td><p>婚姻状况：<span>#if($appnt.marriageName && ($appnt.marriageName)!="null") ${appnt.marriageName} #end</span></p></td>
+				<td><p>学历：<span>#if($appnt.degreeName && ($appnt.degreeName)!="null") ${appnt.degreeName} #end</span></p></td>
+			</tr>
+			<tr>
+				<td><p>年收入：<span>#if($appnt.yearIncom && ($appnt.yearIncom)!="null") ${appnt.yearIncom} #end</span></p></td>
+				<td><p>职业代码：<span>#if($appnt.occupation && ($appnt.occupation)!="null") ${appnt.occupation} #end</span></p></td>
+				<td><p>职业：<span>#if($appnt.occupationName && ($appnt.occupationName)!="null") ${appnt.occupationName} #end</span></p></td>
+				<td><p>手机号码：<span>#if($appnt.mobile && ($appnt.mobile)!="null") ${appnt.mobile} #end</span></p></td>
+			</tr>
+			<tr>
+				<td><p>邮政编码：<span>#if($appnt.zipCode && ($appnt.zipCode)!="null") ${appnt.zipCode} #end</span></p></td>
+				<td colspan="3"><p>电子邮箱：<span>#if($appnt.email && ($appnt.email)!="null") ${appnt.email} #end</span></p></td>
+			</tr>
+		</tbody>		
+	</table>
+	<table class="insurance">
+		<thead>
+			<tr>
+				<td colspan="4"><h3>被保险人资料</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			#foreach($insured in $insureds)
+				<tr>
+					<td><p>是投保人的：<span>#if($insured.insuredRelation && ($insured.insuredRelation)!="null") $insured.insuredRelation #end</span></p></td>
+					<td><p>姓名：<span>#if($insured.insuredName && ($insured.insuredName)!="null") $insured.insuredName #end</span></p></td>
+					<td><p>性别：<span>#if($insured.sex && $insured.sex=="M") 男  #else 女   #end</span></p></td>
+					<td><p>国籍/户籍：<span>#if($insured.nationality && ($insured.nationality)!="null" && $insured.provIdName && ($insured.provIdName)!="null") $insured.nationality/$insured.provIdName #end</span></p></td>
+				</tr>
+				<tr>
+					<td><p>婚姻状况：<span>#if($insured.marriageName && ($insured.marriageName)!="null") $insured.marriageName #end</span></p></td>
+					<td><p>出生日期：<span>#if($insured.birthday && ($insured.birthday)!="null") $insured.birthday #end</span></p></td>
+					<td><p>证件类型：<span>#if($insured.idTypeName && ($insured.idTypeName)!="null") $insured.idTypeName #end</span></p></td>
+					<td><p>证件号码：<span>#if($insured.idNo && ($insured.idNo)!="null") $insured.idNo #end</span></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>职业及代码：<span>#if($insured.occupationName  && ($insured.occupationName)!="null" && $insured.occupation && ($insured.occupation)!="null") $insured.occupationName/$insured.occupation #end</span></p></td>
+					<td><p>年收入：<span>#if($insured.yearIncom && ($insured.yearIncom)!="null") $insured.yearIncom #end</span></p></td>
+					<td><p>邮编：<span>#if($insured.zipCode && ($insured.zipCode)!="null") $insured.zipCode #end</span></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>手机号码：<span>#if($insured.mobile && ($insured.mobile)!="null") $insured.mobile #end</span></p></td>
+					<td colspan="2"><p>电子邮箱：<span>#if($insured.email && ($insured.email)!="null") $insured.email #end</span></p></td>
+				</tr>
+			#end
+		</tbody>		
+	</table>
+	
+	<table class="insurance">
+		<thead>
+			<tr>
+				<td colspan="3"><h3>身故保险金受益人</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			#foreach($item in $benes)
+				<tr>
+					<td><p>受益人姓名：<span>#if($item.beneName && ($item.beneName)!="null") $item.beneName #end</span></p></td>
+					<td><p>证件类型：<span>#if($item.idTypeName && ($item.idTypeName)!="null") $item.idTypeName #end</span></p></td>
+					<td><p>证件号码：<span>#if($item.idNo && ($item.idNo)!="null") $item.idNo #end</span></p></td>
+				</tr>
+				<tr>
+					<td><p>是被保险人的：<span>#if($item.benefitRelationName && ($item.benefitRelationName)!="null") $item.benefitRelationName #end</span></p></td>
+					<td><p>受益顺序：<span>#if($item.beneGrade && ($item.beneGrade)!="null") $item.beneGrade #end</span></p></td>
+				</tr>
+				<tr></tr>
+			#end
+		</tbody>		
+	</table>
+	
+	<table class="insuranceNotice">
+		<thead>
+			<tr>
+				<td colspan="4"><h3>投保事项</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+				
+				<tr>
+					<td><p>险种代码：<span>#if($policy.productCode && ($policy.productCode)!="null") ${policy.productCode} #end</span></p></td>
+					<td><p>险种名称：<span>#if($policy.productName && ($policy.productName)!="null") ${policy.productName} #end</span></p></td>
+					<td><p>缴费方式：<span>#if($policy.payintvName && ($policy.payintvName)!="null") ${policy.payintvName}  #end
+					</span></p></td>
+					<td><p>基本保额/档次/份数：<span>#if($policy.faceamount && ($policy.faceamount)!="null") ${policy.faceamount}元 #end #if($policy.insuWay && ($policy.insuWay)!="null") /${policy.insuWay} #end #if($policy.mult && ($policy.mult)!="null") /${policy.mult} #end</span></p></td>
+				</tr>
+				<tr>
+					<td><p>保险期间：<span>
+					#if($policy.policyTerm && ($policy.policyTerm)!="null") ${policy.policyTerm}年 #end
+					</span></p></td>
+					<td><p>缴费期间：<span>
+					#if($policy.premiumTerm && ($policy.premiumTerm)!="null") 
+						${policy.premiumTerm}年
+					 #end					
+					</span></p></td>
+					<td colspan="2"><p>首期保费：<span>#if($policy.initialPremium && ($policy.initialPremium)!="null") ${policy.initialPremium} #end</span>元</p></td>
+				</tr>
+			
+			<tr>
+				<td><p>保险费合计：<span>#if($policy.totalPremium && ($policy.totalPremium)!="null") ${policy.totalPremium} #end</span>元</p></td>
+				<td><p>追加保险费：<span></span>元</p></td>
+				<td colspan="2"><p>开户行：<span></span></p></td>
+			</tr>
+		</tbody>		
+	</table>
+
+	<table class="health">
+		<thead>
+			<tr>
+				<td colspan="4"><h3>健康告知</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr >
+				<td colspan="2"><p>询问事项<span></span></p></td>
+				<td><p>被保险人</p><p>是&nbsp;&nbsp;&nbsp;&nbsp;否</p></td>
+			</tr>
+			#foreach($insured in $insureds)
+			<tr>
+				<td width="70px">1.</td>
+				<td><p>被保险人目前的身高(厘米),体重(公斤)</p></td>
+				<td width="120px"><p><span>#if($insured.height && ($insured.height)!="null") $insured.height #end</span>厘米&nbsp;<span>#if($insured.weight && ($insured.weight)!="null") $insured.weight #end</span>公斤</p></td>
+			</tr>
+			#end
+		</tbody>
+		
+		</table>
+		
+	<table class="warrant">
+		<thead>
+			<tr>
+				<td colspan="9"><h3>保险人、被保险人声明和授权</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="healthState">
+				<td colspan="9">
+					<p>1、本人已认真阅读投保提示并亲笔签字确认，本投保单中填写的所有内容都真实准确完整，如有不实告知，并足以影响承保决定，贵公司有权依法解除保险合同，并对合同解除前发生的保险事故不承担保险责任。</p>
+					<p>2、本人已从贵公司处获得了所投险种的<b>保险条款</b>，贵公司对条款进行了说明尤其是<b>犹豫期条款</b>、<b>保险责任条款</b>、<b>责任免除条款</b>、<b>合同解除条款</b>等内容向本人作明确提示与说明，本人确认已经明确知晓并正确理解所投险种的<b>保险条款</b>的<b>全部内容</b>、并同意遵守。</p>
+					<p>3、本人已了解，一年期主险/一年期附加险的保险期间为一年，选择自动申请续保方式下，如贵公司审核后同意续保、收取保险费后保险合同/附加保险合同继续有效；如贵公司审核后不同意续保、不再收取保险费，保险合同/附加保险合同期满终止。如本人决定终止续保，应于一年期主险/一年期附加险保险期间满期日前办理终止续保手续。</p>
+					<p>4、本人授权贵公司可以从医疗机构、保险公司等任何单位、组织和个人，就有关保险事宜查询或索取与本人相关的资料或证明，贵公司对个人资料承担保密义务。此授权的影印也同样有效。</p>
+					<p>5、本投保书中转账账户所有人、开户银行和帐号均真实可靠，特授权贵公司从上述银行账户中划扣本次投保申请以及续期所需缴纳的保险费及保单服务相关费用。此授权将长期有效，直至保险合同缴费期满或本人以书面形式通知终止。</p>
+					<p>6、<b>本人已知晓：本投保单不得作为收取现金的凭证。</b></p>
+				</td>
+			</tr>			
+		</tbody>
+	</table>	
+	
+	<table class="warrant">
+		<thead>
+			<tr>
+				<td colspan="9"><h3>投保人确认栏</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="healthState">
+				<td colspan="9">
+					<p>如果投保计划中含有中国保监会认定的人身保险新型产品，请投保人在确认已阅读保险条款、产品说明书和投保提示书，了解本产品的特
+					点和投保单利益的不确定性后，在下面亲笔抄录后列语句后签名：<b><u>“本人已阅读保险条款、产品说明书和投保提示书，了解产品特点和保单利益的不确定性。”</u></b></p><br/>
+					<img style="width:540px;height:18px;" src="${imgpath}${base64str}" />
+					<p style="text-align:right">投保人签名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span></span></p>
+				</td>
+			</tr>			
+		</tbody>
+	</table>
+	<div style="margin-top:4px;width:100%;" class="conformIns">
+		<p><b>请您确认本投保单中所有的内容填写真实,准确,完整,而且充分了解并同意声明和授权后亲笔签名。</b></p>
+		<p>投保人签名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被保险人/法定监护人签名:1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></p>
+		<p>投保申请日期:&nbsp;&nbsp;<span>${nowTime}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;初审人员签章及日期:<span></span></p>
+	</div>
+</body>
+</html>

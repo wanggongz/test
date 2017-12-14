@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenpu.proxy.access.mapper.InsureLogMapper">
+  <resultMap id="BaseResultMap" type="com.shenpu.proxy.access.domain.InsureLog">
+    <id column="insure_log_id" jdbcType="VARCHAR" property="insureLogId" />
+    <result column="apply_code" jdbcType="VARCHAR" property="applyCode" />
+    <result column="req_time" jdbcType="TIMESTAMP" property="reqTime" />
+    <result column="rsp_time" jdbcType="TIMESTAMP" property="rspTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="log_type" jdbcType="VARCHAR" property="logType" />
+    <result column="elapsed_time" jdbcType="BIGINT" property="elapsedTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shenpu.proxy.access.domain.InsureLog">
+    <result column="req_str" jdbcType="LONGVARCHAR" property="reqStr" />
+    <result column="rsp_str" jdbcType="LONGVARCHAR" property="rspStr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    insure_log_id, apply_code, req_time, rsp_time, description, url, ip, user_id, user_name, 
+    log_type, elapsed_time
+  </sql>
+  <sql id="Blob_Column_List">
+    req_str, rsp_str
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from syb_insure_log
+    where insure_log_id = #{insureLogId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from syb_insure_log
+    where insure_log_id = #{insureLogId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shenpu.proxy.access.domain.InsureLog">
+    insert into syb_insure_log (insure_log_id, apply_code, req_time, 
+      rsp_time, description, url, 
+      ip, user_id, user_name, 
+      log_type, elapsed_time, req_str, 
+      rsp_str)
+    values (#{insureLogId,jdbcType=VARCHAR}, #{applyCode,jdbcType=VARCHAR}, #{reqTime,jdbcType=TIMESTAMP}, 
+      #{rspTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{ip,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{logType,jdbcType=VARCHAR}, #{elapsedTime,jdbcType=BIGINT}, #{reqStr,jdbcType=LONGVARCHAR}, 
+      #{rspStr,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shenpu.proxy.access.domain.InsureLog">
+    insert into syb_insure_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insureLogId != null">
+        insure_log_id,
+      </if>
+      <if test="applyCode != null">
+        apply_code,
+      </if>
+      <if test="reqTime != null">
+        req_time,
+      </if>
+      <if test="rspTime != null">
+        rsp_time,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="logType != null">
+        log_type,
+      </if>
+      <if test="elapsedTime != null">
+        elapsed_time,
+      </if>
+      <if test="reqStr != null">
+        req_str,
+      </if>
+      <if test="rspStr != null">
+        rsp_str,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insureLogId != null">
+        #{insureLogId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyCode != null">
+        #{applyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="reqTime != null">
+        #{reqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rspTime != null">
+        #{rspTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="logType != null">
+        #{logType,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null">
+        #{elapsedTime,jdbcType=BIGINT},
+      </if>
+      <if test="reqStr != null">
+        #{reqStr,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="rspStr != null">
+        #{rspStr,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shenpu.proxy.access.domain.InsureLog">
+    update syb_insure_log
+    <set>
+      <if test="applyCode != null">
+        apply_code = #{applyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="reqTime != null">
+        req_time = #{reqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rspTime != null">
+        rsp_time = #{rspTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="logType != null">
+        log_type = #{logType,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null">
+        elapsed_time = #{elapsedTime,jdbcType=BIGINT},
+      </if>
+      <if test="reqStr != null">
+        req_str = #{reqStr,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="rspStr != null">
+        rsp_str = #{rspStr,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where insure_log_id = #{insureLogId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shenpu.proxy.access.domain.InsureLog">
+    update syb_insure_log
+    set apply_code = #{applyCode,jdbcType=VARCHAR},
+      req_time = #{reqTime,jdbcType=TIMESTAMP},
+      rsp_time = #{rspTime,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      log_type = #{logType,jdbcType=VARCHAR},
+      elapsed_time = #{elapsedTime,jdbcType=BIGINT},
+      req_str = #{reqStr,jdbcType=LONGVARCHAR},
+      rsp_str = #{rspStr,jdbcType=LONGVARCHAR}
+    where insure_log_id = #{insureLogId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shenpu.proxy.access.domain.InsureLog">
+    update syb_insure_log
+    set apply_code = #{applyCode,jdbcType=VARCHAR},
+      req_time = #{reqTime,jdbcType=TIMESTAMP},
+      rsp_time = #{rspTime,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      log_type = #{logType,jdbcType=VARCHAR},
+      elapsed_time = #{elapsedTime,jdbcType=BIGINT}
+    where insure_log_id = #{insureLogId,jdbcType=VARCHAR}
+  </update>
+</mapper>
